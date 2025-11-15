@@ -1,132 +1,899 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Tzu-Hao (Steven) Liu – Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>Steven Liu | Oncology Scientist & Drug Discovery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Tzu-Hao 'Steven' Liu – translational oncology and small-molecule drug discovery." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --bg: #050816;
+      --bg-alt: #0f172a;
+      --card: #020617;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56,189,248,0.16);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --shadow-soft: 0 18px 60px rgba(15,23,42,0.75);
+      --radius-lg: 18px;
+      --radius-xl: 26px;
+      --transition-fast: 180ms ease-out;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 24px 16px 48px;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 44%, #000 100%);
+      color: var(--text);
       line-height: 1.6;
-      background: #0b0b0b;
-      color: #f5f5f5;
+      min-height: 100vh;
     }
-    h1, h2, h3 {
-      margin-top: 1.5em;
-      margin-bottom: 0.5em;
-    }
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.5rem; border-bottom: 1px solid #444; padding-bottom: 4px; }
-    h3 { font-size: 1.15rem; }
-    a { color: #6bb4ff; text-decoration: none; }
+
+    a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .tagline { margin-top: 0.5em; font-size: 1rem; color: #cccccc; }
-    .section { margin-top: 2rem; }
-    ul { padding-left: 1.2rem; }
-    .pill {
-      display: inline-block;
+
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 20px 16px 40px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(15,23,42,0.98), rgba(15,23,42,0.85), transparent);
+      margin-bottom: 16px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0 10px;
+      border-bottom: 1px solid rgba(148,163,184,0.25);
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-circle {
+      width: 32px;
+      height: 32px;
       border-radius: 999px;
-      padding: 2px 10px;
-      border: 1px solid #444;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #bbbbbb;
+      background: radial-gradient(circle at 25% 15%, #38bdf8 0, #0ea5e9 36%, #1d4ed8 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 15px;
+      color: #e5f4ff;
+      box-shadow: 0 10px 30px rgba(56,189,248,0.6);
+    }
+
+    .nav-title {
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      font-size: 15px;
+    }
+
+    .nav-subtitle {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 14px;
+      font-size: 13px;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 2px;
+      color: var(--muted);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(to right, #38bdf8, #a855f7);
+      transition: width var(--transition-fast);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 26px;
+      margin-top: 18px;
+      margin-bottom: 28px;
+      align-items: center;
+    }
+
+    .hero-left {
+      background: radial-gradient(circle at top left, rgba(56,189,248,0.1), transparent 56%),
+                  radial-gradient(circle at bottom right, rgba(129,140,248,0.14), transparent 50%);
+      border-radius: var(--radius-xl);
+      padding: 22px 22px 20px;
+      border: 1px solid rgba(148,163,184,0.28);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 3px 9px 3px 4px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.92);
+      border: 1px solid rgba(56,189,248,0.7);
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .hero-pill-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #bbf7d0 0, #22c55e 40%, #166534 100%);
+      box-shadow: 0 0 14px rgba(74,222,128,0.85);
+    }
+
+    .hero-title {
+      font-size: 26px;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(to right, #38bdf8, #a855f7);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-tagline {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 16px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .hero-chip {
+      font-size: 11px;
+      padding: 7px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.45);
+      background: rgba(15,23,42,0.9);
+      color: #e5e7eb;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .hero-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
       margin-top: 4px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .hero-contact strong { color: var(--text); }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .btn-primary, .btn-ghost {
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-size: 12px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .btn-primary {
+      background: linear-gradient(to right, #38bdf8, #6366f1);
+      color: #0b1120;
+      font-weight: 600;
+      box-shadow: 0 16px 36px rgba(56,189,248,0.5);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 46px rgba(56,189,248,0.65);
+    }
+
+    .btn-ghost {
+      background: rgba(15,23,42,0.9);
+      border-color: rgba(148,163,184,0.55);
+      color: var(--muted);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15,23,42,1);
+      border-color: var(--accent);
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-card {
+      border-radius: var(--radius-xl);
+      padding: 14px 14px 16px;
+      background: radial-gradient(circle at top, rgba(56,189,248,0.25), rgba(15,23,42,0.96) 46%, #020617 100%);
+      border: 1px solid rgba(148,163,184,0.4);
+      box-shadow: 0 22px 50px rgba(15,23,42,0.95);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-img-wrap {
+      width: 110px;
+      height: 110px;
+      border-radius: 999px;
+      border: 2px solid rgba(148,163,184,0.7);
+      padding: 3px;
+      background: radial-gradient(circle at 25% 15%, #38bdf8 0, #0f172a 60%, #020617 100%);
+      margin-bottom: 12px;
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      object-fit: cover;
+      background: #020617;
+    }
+
+    .hero-role {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+
+    .hero-name {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .hero-highlight {
+      font-size: 12px;
+      border-radius: 12px;
+      padding: 6px 8px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.45);
+      margin-bottom: 10px;
+    }
+
+    .hero-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      font-size: 11px;
+    }
+
+    .mini-card {
+      background: rgba(15,23,42,0.92);
+      border-radius: 12px;
+      padding: 7px 8px;
+      border: 1px solid rgba(30,64,175,0.8);
+    }
+
+    .mini-label {
+      text-transform: uppercase;
+      font-size: 10px;
+      color: var(--muted);
+      margin-bottom: 2px;
+      letter-spacing: 0.08em;
+    }
+
+    .mini-value {
+      font-size: 11px;
+    }
+
+    .badge-floating {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      font-size: 11px;
+      padding: 5px 7px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.96);
+      border: 1px solid rgba(129,140,248,0.9);
+    }
+
+    .section {
+      margin-bottom: 26px;
+      border-radius: var(--radius-lg);
+      padding: 18px 18px 16px;
+      background: radial-gradient(circle at top left, rgba(56,189,248,0.06), transparent 58%),
+                  radial-gradient(circle at bottom right, rgba(56,189,248,0.04), transparent 52%),
+                  rgba(15,23,42,0.96);
+      border: 1px solid rgba(30,64,175,0.65);
+      box-shadow: 0 18px 42px rgba(15,23,42,0.85);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      gap: 8px;
+    }
+
+    .section-title {
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    .section-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .section-body {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .item {
+      background: rgba(15,23,42,0.95);
+      border-radius: 14px;
+      padding: 10px 11px;
+      border: 1px solid rgba(30,64,175,0.8);
+      font-size: 12px;
+    }
+
+    .item-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+
+    .item-main {
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .item-sub {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 6px;
+    }
+
+    .pill {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.6);
+      white-space: nowrap;
+    }
+
+    .cards-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 8px;
+      font-size: 12px;
+    }
+
+    .card {
+      background: rgba(15,23,42,0.95);
+      border-radius: 14px;
+      padding: 10px 11px;
+      border: 1px solid rgba(30,64,175,0.8);
+    }
+
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .card ul {
+      margin-left: 16px;
+      padding-left: 0;
+      list-style: disc;
+    }
+
+    .card li {
+      margin-bottom: 3px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 8px;
+      font-size: 12px;
+    }
+
+    .skills-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .skills-list {
+      margin-left: 16px;
+      list-style: disc;
+    }
+
+    .skills-list li {
+      margin-bottom: 3px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+      font-size: 11px;
+    }
+
+    .gallery-card {
+      background: rgba(15,23,42,0.95);
+      border-radius: 14px;
+      border: 1px solid rgba(56,189,248,0.55);
+      overflow: hidden;
+    }
+
+    .gallery-img-wrap {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: radial-gradient(circle at top, #38bdf8, #020617 60%);
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-caption {
+      padding: 7px 8px 8px;
+      border-top: 1px solid rgba(30,64,175,0.8);
+    }
+
+    .gallery-caption-title {
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .pub-list {
+      font-size: 12px;
+      margin-top: 6px;
+      display: grid;
+      gap: 5px;
+    }
+
+    .pub-list li {
+      list-style: none;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+      padding-top: 12px;
+      border-top: 1px solid rgba(30,64,175,0.8);
+    }
+
+    @media (max-width: 840px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-right {
+        order: -1;
+      }
+      .cards-grid-3, .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 16px 12px 30px; }
+      .hero-left, .section { padding: 16px 13px 13px; }
+      .hero-title { font-size: 22px; }
+      .cards-grid-3, .gallery, .skills-grid, .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Tzu-Hao (Steven) Liu</h1>
-    <p class="tagline">
-      Oncology-focused scientist specializing in small-molecule drug discovery and translational cancer biology.
-    </p>
-    <p>
-      Email: <a href="mailto:tzuhao.steven.liu@gmail.com">tzuhao.steven.liu@gmail.com</a> ·
-      LinkedIn: <a href="https://www.linkedin.com/in/tzu-hao-liu" target="_blank">Steven Liu | LinkedIn</a>
-    </p>
-  </header>
+  <div class="page">
+    <header>
+      <div class="nav">
+        <div class="nav-left">
+          <div class="logo-circle">SL</div>
+          <div>
+            <div class="nav-title">Steven Liu</div>
+            <div class="nav-subtitle">Oncology · Small-Molecule Drug Discovery</div>
+          </div>
+        </div>
+        <nav class="nav-links">
+          <a href="#about">About</a>
+          <a href="#education">Education</a>
+          <a href="#experience">Experience</a>
+          <a href="#work">My Work</a>
+          <a href="#skills">Skills</a>
+          <a href="#publications">Publications</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
 
-  <section class="section" id="about">
-    <h2>About</h2>
-    <p>
-      I am an oncology-focused scientist and Ph.D. candidate in Biomedical Sciences, specializing in small-molecule
-      drug discovery and translational cancer biology. I drive oncology projects from target validation to preclinical
-      candidate evaluation using cell-based, antibody-based, and biochemical assays, and integrate data-driven analysis
-      to generate clear, decision-ready insights for therapeutic development.
-    </p>
-  </section>
+    <main>
+      <section class="hero" id="top">
+        <div class="hero-right">
+          <div class="hero-card">
+            <div class="badge-floating">Available · 2026 (OPT)</div>
+            <div class="profile-img-wrap">
+              <!-- 將 images/profile.jpg 換成你的照片檔名 -->
+              <img src="images/profile.jpg" alt="Portrait of Steven Liu" class="profile-img" />
+            </div>
+            <div class="hero-role">Ph.D. Candidate · Biomedical Sciences</div>
+            <div class="hero-name">Tzu-Hao (Steven) Liu</div>
+            <div class="hero-highlight">
+              Translational oncology scientist specializing in transcriptional CDKs, PROTAC-style degraders, and data-driven therapeutic discovery.
+            </div>
+            <div class="hero-mini-grid">
+              <div class="mini-card">
+                <div class="mini-label">Current</div>
+                <div class="mini-value">Tulane Univ. School of Medicine</div>
+              </div>
+              <div class="mini-card">
+                <div class="mini-label">Target Roles</div>
+                <div class="mini-value">Scientist / Postdoctoral Research</div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  <section class="section" id="highlights">
-    <h2>Research Highlights</h2>
+        <div class="hero-left">
+          <div class="hero-pill">
+            <span class="hero-pill-dot"></span>
+            Seeking Scientist / Postdoctoral roles in oncology & small-molecule drug discovery
+          </div>
+          <h1 class="hero-title">
+            Designing <span>degrader-based</span> therapies at the interface of cancer biology and data science.
+          </h1>
+          <p class="hero-tagline">
+            I develop and evaluate selective small-molecule degraders targeting transcriptional CDKs, integrating cell-based assays, biochemical readouts,
+            and omics analyses to generate decision-ready insights for new cancer therapeutics.
+          </p>
+          <div class="hero-grid">
+            <div class="hero-chip">Transcriptional CDKs · CDK8/19</div>
+            <div class="hero-chip">PROTAC-style degraders</div>
+            <div class="hero-chip">Cancer cell-based assays</div>
+            <div class="hero-chip">Antibody & biochemical assays</div>
+            <div class="hero-chip">RNA-seq & proteomics analysis</div>
+            <div class="hero-chip">Translational oncology strategy</div>
+          </div>
 
-    <h3>1. Target Validation</h3>
-    <span class="pill">Antibody-based &amp; Biochemical Assays</span>
-    <ul>
-      <li>Metabolic Response (HPG) and Immune Response Detection (ELISA).</li>
-      <li>Immunostaining and Proximity Ligation Assay.</li>
-      <li>Quantitative Biomolecular Analysis by Immunoblotting and qPCR.</li>
-    </ul>
+          <div class="hero-contact">
+            <span><strong>Mobile:</strong> +1-979-213-2157</span>
+            <span>·</span>
+            <span><strong>Email:</strong> <a href="mailto:tzuhao.steven.liu@gmail.com">tzuhao.steven.liu@gmail.com</a></span>
+            <span>·</span>
+            <span><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tzu-hao-liu" target="_blank" rel="noreferrer">tzu-hao-liu</a></span>
+          </div>
 
-    <h3>2. Preclinical Candidate Evaluation (Cell-based Assays)</h3>
-    <ul>
-      <li>Scratch Wound Healing Assay for Cell Migration.</li>
-      <li>Dose–Response Cell Viability Assays and EC50/IC50 Determination.</li>
-      <li>Clonogenic Survival and Long-term Colony Formation under Degrader Treatment.</li>
-    </ul>
+          <div class="hero-buttons">
+            <a class="btn-primary" href="#work">View my work ↓</a>
+            <!-- 若你把 PDF 放在 repo 根目錄，檔名改成實際檔名 -->
+            <a class="btn-ghost" href="Portfolio_Steven_Liu-3.pdf" target="_blank" rel="noreferrer">Download portfolio PDF</a>
+          </div>
+        </div>
+      </section>
 
-    <h3>3. Translational Oncology &amp; Data-driven Analysis</h3>
-    <ul>
-      <li>Volcano Plot of Differential Gene Expression after Treatment.</li>
-      <li>RNA-seq Analysis Revealing Pathway-level Responses to Treatment (Bioinformatics Analysis).</li>
-      <li>UMAP Embedding Revealing Treatment-induced Sample Clusters (Bioinformatics Analysis).</li>
-    </ul>
-  </section>
+      <section class="section" id="about">
+        <div class="section-header">
+          <div class="section-title">About Me</div>
+          <div class="section-kicker">Profile</div>
+        </div>
+        <div class="section-body">
+          <p>
+            I am an oncology-focused scientist specializing in small-molecule drug discovery and translational cancer biology.
+            I drive projects from target validation to preclinical candidate evaluation using cell-based, antibody-based, and biochemical assays,
+            and I integrate data-driven analysis to generate clear, decision-ready insights for therapeutic development.
+          </p>
+        </div>
+      </section>
 
-  <section class="section" id="publications">
-    <h2>Publications, Manuscripts &amp; Patent</h2>
-    <ul>
-      <li>
-        Liu, T.-H. †, Lyu, K. †, Zhao, J. C., Dang, X., Wang, X.*, &amp; Ji, J.-Y.*.
-        <em>Development of potent and selective PROTAC degraders targeting transcriptional CDKs.</em>
-        (Manuscript in preparation)
-      </li>
-      <li>
-        Liu, T.-H. †, Li, X. †, Hsu, F. N. †, Sun, J., Niu, Y., Xing, Y., Liu, M., Liu, Y., Hemba-Waduge, R. U., Ni, J.-Q.*, &amp; Ji, J.-Y.*.
-        <em>Asymmetric interdependency among the four subunits of the CDK8 module.</em>
-        (Manuscript in preparation)
-      </li>
-      <li>
-        Li, X., Liu, M., Xing, Y., Niu, Y., Liu, T.-H., Sun, J. L., Liu, Y., Hemba-Waduge, R. U., &amp; Ji, J.-Y*. (2024).
-        <em>Distinct effects of CDK8 module subunits on cellular growth and proliferation in Drosophila.</em>
-        Development 151(23): dev203111.
-      </li>
-      <li>
-        Liu, M. †, Hemba-Waduge, R. U. †, Li, X., Huang, X., Liu, T.-H., Han, X., Wang, Y., &amp; Ji, J.-Y*. (2024).
-        <em>Wnt/Wingless signaling promotes lipid mobilization through signal-induced transcriptional repression.</em>
-        Proc Natl Acad Sci U S A 121(28): e2322066121.
-      </li>
-      <li>
-        Li, X., Zhang, M., Liu, M., Liu, T.-H., Hemba-Waduge, R. U., &amp; Ji, J.-Y*. (2022).
-        <em>Cdk8 attenuates lipogenesis by inhibiting SREBP-dependent transcription in Drosophila.</em>
-        Dis Model Mech 15(11): dmm049650.
-      </li>
-      <li>
-        <strong>Patent (provisional, in preparation)</strong> – Selective PROTAC degraders targeting transcriptional CDKs and their use in cancer therapy. Role: co-inventor.
-      </li>
-    </ul>
-  </section>
+      <section class="section" id="education">
+        <div class="section-header">
+          <div class="section-title">Education</div>
+          <div class="section-kicker">Academic Background</div>
+        </div>
+        <div class="two-col">
+          <div class="item">
+            <div class="item-label">Ph.D.</div>
+            <div class="item-main">Biomedical Sciences, 2025</div>
+            <div class="item-sub">Tulane University School of Medicine</div>
+          </div>
+          <div class="item">
+            <div class="item-label">M.S. & B.S.</div>
+            <div class="item-main">Biochemical Science and Technology</div>
+            <div class="item-sub">National Taiwan University · M.S. 2018 · B.S. 2016</div>
+          </div>
+        </div>
+      </section>
 
-  <section class="section" id="contact">
-    <h2>Contact</h2>
-    <p>
-      For opportunities in translational oncology and small-molecule drug discovery, please feel free to contact me at
-      <a href="mailto:tzuhao.steven.liu@gmail.com">tzuhao.steven.liu@gmail.com</a>.
-    </p>
-  </section>
+      <section class="section" id="experience">
+        <div class="section-header">
+          <div class="section-title">Work Experience</div>
+          <div class="section-kicker">Research Career</div>
+        </div>
+        <div class="two-col">
+          <div class="item">
+            <div class="item-label">2020 – 2025</div>
+            <div class="item-main">Doctoral Candidate Research Associate / Research Associate</div>
+            <div class="item-sub">Tulane University School of Medicine</div>
+          </div>
+          <div class="item">
+            <div class="item-label">2016 – 2020</div>
+            <div class="item-main">Graduate Research & Teaching Assistant · Research Assistant</div>
+            <div class="item-sub">
+              National Taiwan University · Chang Gung University
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="work">
+        <div class="section-header">
+          <div class="section-title">My Work</div>
+          <div class="section-kicker">Selected Project</div>
+        </div>
+        <div class="section-body">
+          <p><strong>Project:</strong> Selective degradation of oncogenic kinases using PROTAC-style small molecules targeting transcriptional CDKs.</p>
+
+          <div class="cards-grid-3" style="margin-top: 12px;">
+            <div class="card">
+              <div class="card-title">Target Validation</div>
+              <ul>
+                <li>Quantitative immunoblotting and qPCR to confirm target engagement and pathway modulation.</li>
+                <li>Metabolic response assays (e.g., HPG incorporation).</li>
+                <li>Immune-response detection by ELISA, immunostaining, and proximity ligation assays.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="card-title">Preclinical Candidate Evaluation</div>
+              <ul>
+                <li>Sscratch wound healing assays to quantify cell migration.</li>
+                <li>Dose–response viability profiling with EC<sub>50</sub>/IC<sub>50</sub>/DC<sub>50</sub> fitting.</li>
+                <li>Cell-cycle and apoptosis characterization by flow cytometry.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="card-title">Translational Oncology</div>
+              <ul>
+                <li>RNA-seq and proteomics to map pathway-level responses to treatment.</li>
+                <li>UMAP and volcano plots to visualize molecular changes.</li>
+                <li>Survival analyses to link molecular signatures with patient outcomes.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="section-header">
+          <div class="section-title">Technical Skills & Methods</div>
+          <div class="section-kicker">Core Toolkit</div>
+        </div>
+        <div class="skills-grid">
+          <div class="item">
+            <div class="skills-title">Molecular & Cell Biology</div>
+            <ul class="skills-list">
+              <li>CRISPR KO/KI and stable cell line generation.</li>
+              <li>Co-IP, qRT-PCR, and reporter assays.</li>
+              <li>Mammalian and non-mammalian cell culture, including cancer and immune cells.</li>
+            </ul>
+          </div>
+          <div class="item">
+            <div class="skills-title">Cancer & Small-Molecule Screening</div>
+            <ul class="skills-list">
+              <li>Viability, proliferation, and cytotoxicity assays.</li>
+              <li>Dose–response and DC<sub>50</sub>/IC<sub>50</sub>/EC<sub>50</sub> determination.</li>
+              <li>Mechanism-of-action studies with immunopathway readouts and phospho-specific westerns.</li>
+              <li>Experience with NCI-60 cancer cell panel analyses.</li>
+            </ul>
+          </div>
+          <div class="item">
+            <div class="skills-title">Data Analysis & Coding</div>
+            <ul class="skills-list">
+              <li>LLM-assisted R/Python analytics pipelines for normalization, QC, statistics, and automated figure generation.</li>
+              <li>Implemented data contracts, acceptance criteria, and reproducible environments.</li>
+              <li>Improved analysis turnaround time by 50–80% while reducing rework.</li>
+            </ul>
+          </div>
+          <div class="item">
+            <div class="skills-title">Tools & Platforms</div>
+            <ul class="skills-list">
+              <li>GraphPad Prism, ImageJ/Fiji, SnapGene, LabArchives.</li>
+              <li>FlowJo and standard bioinformatics environments.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="gallery">
+        <div class="section-header">
+          <div class="section-title">Data & Figures Gallery</div>
+          <div class="section-kicker">Selected Visuals</div>
+        </div>
+        <div class="section-body">
+          <p style="margin-bottom: 6px;">
+            Below are example slots for your key figures. Replace the placeholder images with exported panels from your portfolio
+            (e.g., immunoblot summaries, RNA-seq volcano plots, UMAPs).
+          </p>
+          <div class="gallery">
+            <div class="gallery-card">
+              <div class="gallery-img-wrap">
+                <!-- 將 images/figure-target-validation.png 換成你的圖檔 -->
+                <img src="images/figure-target-validation.png" alt="Target validation assays" class="gallery-img" />
+              </div>
+              <div class="gallery-caption">
+                <div class="gallery-caption-title">Target Validation</div>
+                <div>Immunoblotting, qPCR, and antibody-based assays confirming specific target engagement.</div>
+              </div>
+            </div>
+            <div class="gallery-card">
+              <div class="gallery-img-wrap">
+                <img src="images/figure-phenotypic-response.png" alt="Phenotypic response assays" class="gallery-img" />
+              </div>
+              <div class="gallery-caption">
+                <div class="gallery-caption-title">Phenotypic Response</div>
+                <div>Cell viability, migration, and flow-based assays defining potency and mechanism of action.</div>
+              </div>
+            </div>
+            <div class="gallery-card">
+              <div class="gallery-img-wrap">
+                <img src="images/figure-omics.png" alt="Omics and survival analyses" class="gallery-img" />
+              </div>
+              <div class="gallery-caption">
+                <div class="gallery-caption-title">Omics & Survival</div>
+                <div>RNA-seq, proteomics, and survival analyses guiding indication and biomarker strategy.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="publications">
+        <div class="section-header">
+          <div class="section-title">Publications & Patent</div>
+          <div class="section-kicker">Selected Outputs</div>
+        </div>
+        <ul class="pub-list">
+          <li>
+            Liu, T.-H., Lyu, K., Zhao, J. C., Dang, X., Wang, X., &amp; Ji, J.-Y. Development of potent and selective PROTAC degraders
+            targeting transcriptional CDKs. <em>(Manuscript in preparation).</em>
+          </li>
+          <li>
+            Liu, T.-H., Li, X., Hsu, F. N., Sun, J., Niu, Y., Xing, Y., Liu, M., Liu, Y., Hemba-Waduge, R. U., Ni, J.-Q., &amp; Ji, J.-Y.
+            Asymmetric interdependency among the four subunits of the CDK8 module. <em>(Manuscript in preparation).</em>
+          </li>
+          <li>
+            Li, X., Liu, M., Xing, Y., Niu, Y., Liu, T.-H., Sun, J. L., Liu, Y., Hemba-Waduge, R. U., &amp; Ji, J.-Y. Distinct effects of CDK8 module subunits on cellular growth and proliferation in Drosophila. <em>Development</em>, 2024.
+          </li>
+          <li>
+            Liu, M., Hemba-Waduge, R. U., Li, X., Huang, X., Liu, T.-H., Han, X., Wang, Y., &amp; Ji, J.-Y. Wnt/Wingless signaling promotes lipid mobilization through transcriptional repression. <em>PNAS</em>, 2024.
+          </li>
+          <li>
+            Li, X., Zhang, M., Liu, M., Liu, T.-H., Hemba-Waduge, R. U., &amp; Ji, J.-Y. Cdk8 attenuates lipogenesis by inhibiting SREBP-dependent transcription in Drosophila. <em>Disease Models &amp; Mechanisms</em>, 2022.
+          </li>
+          <li>
+            <strong>Provisional patent (in preparation):</strong> Selective PROTAC degraders targeting transcriptional CDKs and their use in cancer therapy. Liu, T.-H., Lyu, K., Wang, X., Ji, J.-Y., et al.
+          </li>
+        </ul>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="section-header">
+          <div class="section-title">Contact</div>
+          <div class="section-kicker">Let’s Connect</div>
+        </div>
+        <div class="section-body">
+          <p>
+            I am actively exploring Scientist and Postdoctoral Research Associate opportunities in translational oncology,
+            protein degradation, and small-molecule drug discovery.
+          </p>
+          <div class="pill-row">
+            <div class="pill">Location: USA</div>
+            <div class="pill">Open to relocation</div>
+            <div class="pill">Translational oncology</div>
+            <div class="pill">Degrader discovery</div>
+          </div>
+          <p style="margin-top: 8px;">
+            <strong>Email:</strong> <a href="mailto:tzuhao.steven.liu@gmail.com">tzuhao.steven.liu@gmail.com</a><br />
+            <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tzu-hao-liu" target="_blank" rel="noreferrer">www.linkedin.com/in/tzu-hao-liu</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Tzu-Hao 'Steven' Liu · Built with GitHub Pages.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
