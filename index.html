@@ -11,13 +11,14 @@
   <style>
     :root {
       --bg: #000000;
-      --bg-alt: #050505;
+      --panel-bg: #050811;
+      --bubble-bg: #020617;
       --card: #050811;
       --accent: #38bdf8;
       --accent-soft: rgba(56,189,248,0.2);
       --text: #f9fafb;
       --muted: #9ca3af;
-      --border: #111827;
+      --border: #1f2937;
       --shadow-soft: 0 18px 60px rgba(0,0,0,0.9);
       --radius-lg: 18px;
       --radius-xl: 26px;
@@ -28,7 +29,7 @@
 
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #000000;
+      background: var(--bg);
       color: var(--text);
       line-height: 1.6;
       min-height: 100vh;
@@ -49,7 +50,7 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(18px);
-      background: linear-gradient(to bottom, rgba(0,0,0,0.96), rgba(0,0,0,0.86), transparent);
+      background: rgba(0,0,0,0.96);
       margin-bottom: 16px;
     }
 
@@ -58,7 +59,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 12px 0 10px;
-      border-bottom: 1px solid rgba(31,41,55,0.9);
+      border-bottom: 1px solid var(--border);
     }
 
     .nav-left {
@@ -138,10 +139,8 @@
       width: 100%;
       border-radius: var(--radius-xl);
       padding: 18px 18px 18px;
-      background:
-        radial-gradient(circle at top, rgba(15,23,42,0.6), transparent 60%),
-        #02040a;
-      border: 1px solid rgba(31,41,55,0.95);
+      background: var(--panel-bg);
+      border: 1px solid var(--border);
       box-shadow: 0 22px 50px rgba(0,0,0,1);
       overflow: hidden;
     }
@@ -192,31 +191,31 @@
       font-size: 13px;
       border-radius: 12px;
       padding: 6px 8px;
-      background: rgba(0,0,0,0.85);
-      border: 1px solid rgba(55,65,81,0.9);
+      background: var(--bubble-bg);
+      border: 1px solid var(--border);
       margin-top: 4px;
       max-width: 520px;
-    }
-
-    .badge-floating {
-      position: absolute;
-      right: 10px;
-      top: 10px;
-      font-size: 12px;
-      padding: 5px 7px;
-      border-radius: 999px;
-      background: rgba(0,0,0,0.96);
-      border: 1px solid rgba(129,140,248,0.9);
     }
 
     .hero-availability {
       position: absolute;
       right: 10px;
-      top: 44px;
+      top: 10px;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 6px;
-      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    .availability-pill {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--bubble-bg);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      text-align: right;
+      white-space: nowrap;
     }
 
     .hero-pill {
@@ -225,13 +224,13 @@
       gap: 8px;
       padding: 4px 10px 4px 6px;
       border-radius: 999px;
-      background: rgba(0,0,0,0.9);
-      border: 1px solid rgba(56,189,248,0.7);
+      background: var(--bubble-bg);
+      border: 1px solid var(--border);
       font-size: 12px;
       color: var(--muted);
-      margin-top: 10px;
+      margin-top: 42px; /* 給右上 availability 一點空間 */
       margin-bottom: 10px;
-      max-width: 640px;
+      max-width: 720px;
     }
 
     .hero-pill-dot {
@@ -255,31 +254,13 @@
       font-size: 12px;
       padding: 7px 8px;
       border-radius: 999px;
-      border: 1px solid rgba(55,65,81,0.9);
-      background: rgba(3,7,18,0.95);
+      border: 1px solid var(--border);
+      background: var(--bubble-bg);
       color: #e5e7eb;
       text-align: center;
       white-space: normal;
       word-break: break-word;
       line-height: 1.3;
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-top: 4px;
-      margin-bottom: 10px;
-    }
-
-    .pill {
-      font-size: 12px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: rgba(3,7,18,0.98);
-      border: 1px solid rgba(55,65,81,0.95);
-      white-space: nowrap;
-      color: var(--muted);
     }
 
     .hero-contact {
@@ -301,23 +282,19 @@
       margin-top: 14px;
     }
 
-    .btn-primary, .btn-ghost {
+    .btn-ghost {
       border-radius: 999px;
       padding: 7px 14px;
       font-size: 13px;
-      border: 1px solid transparent;
+      border: 1px solid var(--border);
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 6px;
       text-decoration: none;
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
-    }
-
-    .btn-ghost {
-      background: rgba(3,7,18,0.96);
-      border-color: rgba(55,65,81,0.9);
+      background: var(--bubble-bg);
       color: var(--muted);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
     }
 
     .btn-ghost:hover {
@@ -325,6 +302,7 @@
       border-color: var(--accent);
       color: var(--text);
       transform: translateY(-1px);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.95);
     }
 
     /* SECTIONS */
@@ -333,11 +311,8 @@
       margin-bottom: 26px;
       border-radius: var(--radius-lg);
       padding: 18px 18px 16px;
-      background:
-        radial-gradient(circle at top left, rgba(15,15,15,0.9), transparent 58%),
-        radial-gradient(circle at bottom right, rgba(15,15,15,0.7), transparent 52%),
-        #02040a;
-      border: 1px solid rgba(31,41,55,0.95);
+      background: var(--panel-bg);
+      border: 1px solid var(--border);
       box-shadow: 0 18px 42px rgba(0,0,0,0.95);
     }
 
@@ -374,10 +349,10 @@
     }
 
     .item {
-      background: var(--card);
+      background: var(--panel-bg);
       border-radius: 14px;
       padding: 10px 11px;
-      border: 1px solid rgba(31,41,55,0.95);
+      border: 1px solid var(--border);
       font-size: 13px;
     }
 
@@ -409,10 +384,10 @@
     }
 
     .card {
-      background: var(--card);
+      background: var(--panel-bg);
       border-radius: 14px;
       padding: 10px 11px;
-      border: 1px solid rgba(31,41,55,0.95);
+      border: 1px solid var(--border);
     }
 
     .card-title {
@@ -465,9 +440,9 @@
     }
 
     .gallery-card {
-      background: var(--card);
+      background: var(--panel-bg);
       border-radius: 14px;
-      border: 1px solid rgba(37,99,235,0.7);
+      border: 1px solid var(--border);
       overflow: hidden;
       box-shadow: 0 14px 32px rgba(0,0,0,0.9);
     }
@@ -475,7 +450,7 @@
     .gallery-img-wrap {
       width: 100%;
       aspect-ratio: 4 / 3;
-      background: radial-gradient(circle at top, #020617, #000000 70%);
+      background: #020617;
     }
 
     .gallery-img {
@@ -487,7 +462,7 @@
 
     .gallery-caption {
       padding: 7px 8px 8px;
-      border-top: 1px solid rgba(31,41,55,0.95);
+      border-top: 1px solid var(--border);
     }
 
     .gallery-caption-title {
@@ -515,7 +490,7 @@
       color: var(--muted);
       text-align: center;
       padding-top: 12px;
-      border-top: 1px solid rgba(31,41,55,0.95);
+      border-top: 1px solid var(--border);
     }
 
     @media (max-width: 840px) {
@@ -525,18 +500,20 @@
       .hero-card {
         padding: 16px 14px 16px;
       }
-      .hero-header {
-        flex-direction: row;
-        align-items: center;
-      }
       .cards-grid-3, .gallery {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
       .hero-availability {
         position: static;
+        margin-top: 0;
+        margin-bottom: 8px;
+        align-items: flex-start;
+      }
+      .availability-pill {
+        text-align: left;
+      }
+      .hero-pill {
         margin-top: 10px;
-        margin-bottom: 4px;
-        justify-content: flex-start;
       }
     }
 
@@ -583,11 +560,10 @@
       <!-- HERO -->
       <section class="hero" id="top">
         <div class="hero-card">
-          <div class="badge-floating">Available · Jan. 5th 2026</div>
-
           <div class="hero-availability">
-            <div class="pill">Location: USA</div>
-            <div class="pill">Open to relocation</div>
+            <div class="availability-pill">Available · Jan. 5th 2026</div>
+            <div class="availability-pill">Location: USA</div>
+            <div class="availability-pill">Open to relocation</div>
           </div>
 
           <div class="hero-pill">
