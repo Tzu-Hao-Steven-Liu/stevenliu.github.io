@@ -28,7 +28,7 @@
 
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #000000; /* 全黑背景 */
+      background: #000000; /* 全黑 */
       color: var(--text);
       line-height: 1.6;
       min-height: 100vh;
@@ -44,65 +44,41 @@
       padding: 20px 16px 40px;
     }
 
-    /* NAV：合併 hero 資訊的單一卡片 */
-    .nav-wrapper {
+    header {
       position: sticky;
       top: 0;
       z-index: 20;
-      padding-bottom: 14px;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.96), rgba(0,0,0,0.88), transparent);
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(0,0,0,0.96), rgba(0,0,0,0.86), transparent);
+      margin-bottom: 16px;
     }
 
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      padding: 10px 16px;
-      border-radius: var(--radius-xl);
-      background: rgba(3,7,18,0.98);
-      border: 1px solid rgba(31,41,55,0.95);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.9);
+      padding: 12px 0 10px;
+      border-bottom: 1px solid rgba(31,41,55,0.9);
     }
 
     .nav-left {
       display: flex;
       align-items: center;
-      gap: 12px;
-      min-width: 0;
+      gap: 10px;
     }
 
-    .profile-img-nav-wrap {
-      width: 68px;
-      height: 68px;
+    .logo-circle {
+      width: 32px;
+      height: 32px;
       border-radius: 999px;
-      border: 2px solid rgba(148,163,184,0.7);
-      padding: 2px;
-      background: radial-gradient(circle at 25% 15%, #38bdf8 0, #020617 60%, #000000 100%);
-      flex-shrink: 0;
-    }
-
-    .profile-img-nav {
-      width: 100%;
-      height: 100%;
-      border-radius: inherit;
-      object-fit: cover;
-      object-position: 50% 30%; /* 往上多露一點頭 */
-      background: #020617;
-    }
-
-    .nav-text-block {
+      background: radial-gradient(circle at 25% 15%, #38bdf8 0, #0ea5e9 36%, #1d4ed8 100%);
       display: flex;
-      flex-direction: column;
-      gap: 2px;
-      min-width: 0;
-    }
-
-    .nav-title-row {
-      display: flex;
-      flex-wrap: wrap;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 15px;
+      color: #e5f4ff;
+      box-shadow: 0 10px 26px rgba(56,189,248,0.45);
     }
 
     .nav-title {
@@ -111,31 +87,9 @@
       font-size: 16px;
     }
 
-    .nav-availability {
-      font-size: 11px;
-      padding: 2px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(129,140,248,0.9);
-      background: rgba(15,23,42,0.98);
-      color: #c7d2fe;
-      white-space: nowrap;
-    }
-
     .nav-subtitle {
       font-size: 12px;
       color: var(--muted);
-    }
-
-    .nav-meta {
-      font-size: 11px;
-      color: #6b7280;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-shrink: 0;
     }
 
     .nav-links {
@@ -170,17 +124,118 @@
       width: 100%;
     }
 
-    .nav-actions {
-      display: flex;
+    /* HERO（左右合在同一個大卡片裡） */
+    .hero {
+      margin-top: 18px;
+      margin-bottom: 28px;
+    }
+
+    .hero-shell {
+      border-radius: var(--radius-xl);
+      padding: 22px 22px 20px;
+      background:
+        radial-gradient(circle at top left, rgba(15,15,15,0.9), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(15,15,15,0.7), transparent 55%),
+        #02040a;
+      border: 1px solid rgba(31,41,55,0.95);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 26px;
+      align-items: center;
+    }
+
+    .hero-left {
+      position: relative;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
       gap: 8px;
-      flex-shrink: 0;
+      padding: 3px 9px 3px 4px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.9);
+      border: 1px solid rgba(56,189,248,0.7);
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .hero-pill-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #bbf7d0 0, #22c55e 40%, #166534 100%);
+      box-shadow: 0 0 12px rgba(74,222,128,0.8);
+    }
+
+    .hero-title {
+      font-size: 28px;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .hero-title span {
+      background: none;
+      -webkit-background-clip: border-box;
+      color: var(--text);
+    }
+
+    .hero-tagline {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 16px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .hero-chip {
+      font-size: 12px;
+      padding: 7px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(55,65,81,0.9);
+      background: rgba(3,7,18,0.95);
+      color: #e5e7eb;
+      text-align: center;
+      white-space: normal;
+      word-break: break-word;
+      line-height: 1.3;
+    }
+
+    .hero-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 4px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .hero-contact strong { color: var(--text); }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
     }
 
     .btn-primary,
     .btn-ghost {
       border-radius: 999px;
-      padding: 6px 12px;
-      font-size: 12px;
+      padding: 7px 14px;
+      font-size: 13px;
       border: 1px solid transparent;
       cursor: pointer;
       display: inline-flex;
@@ -198,12 +253,12 @@
       background: linear-gradient(to right, #38bdf8, #6366f1);
       color: #020617;
       font-weight: 600;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.85);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.85);
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 14px 30px rgba(0,0,0,0.95);
+      box-shadow: 0 20px 46px rgba(0,0,0,0.95);
     }
 
     .btn-ghost {
@@ -219,7 +274,96 @@
       transform: translateY(-1px);
     }
 
-    /* 通用 section 卡片 */
+    .hero-right {
+      position: relative;
+    }
+
+    /* hero-card 改成純 layout，不再是第二個框框 */
+    .hero-card {
+      padding: 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+
+    .profile-img-wrap {
+      width: 110px;
+      height: 110px;
+      border-radius: 999px;
+      border: 2px solid rgba(148,163,184,0.7);
+      padding: 3px;
+      background: radial-gradient(circle at 25% 15%, #38bdf8 0, #020617 60%, #000000 100%);
+      margin-bottom: 12px;
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      object-fit: cover;
+      object-position: 50% 30%; /* 調整頭像位置 */
+      background: #020617;
+    }
+
+    .hero-role {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+
+    .hero-name {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .hero-highlight {
+      font-size: 13px;
+      border-radius: 12px;
+      padding: 6px 8px;
+      background: rgba(0,0,0,0.85);
+      border: 1px solid rgba(55,65,81,0.9);
+      margin-bottom: 10px;
+    }
+
+    .hero-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      font-size: 12px;
+    }
+
+    .mini-card {
+      background: rgba(3,7,18,0.98);
+      border-radius: 12px;
+      padding: 7px 8px;
+      border: 1px solid rgba(30,64,175,0.8);
+    }
+
+    .mini-label {
+      text-transform: uppercase;
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 2px;
+      letter-spacing: 0.08em;
+    }
+
+    .mini-value {
+      font-size: 12px;
+    }
+
+    .badge-floating {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.96);
+      border: 1px solid rgba(129,140,248,0.9);
+    }
+
+    /* SECTION 通用卡片 */
     .section {
       margin-bottom: 26px;
       border-radius: var(--radius-lg);
@@ -230,11 +374,6 @@
         #02040a;
       border: 1px solid rgba(31,41,55,0.95);
       box-shadow: 0 18px 42px rgba(0,0,0,0.95);
-    }
-
-    /* 第一個 section（About）跟 nav 稍微拉開一點 */
-    #about.section {
-      margin-top: 18px;
     }
 
     .section-header {
@@ -430,20 +569,19 @@
     }
 
     @media (max-width: 840px) {
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
+      .hero-layout {
+        grid-template-columns: minmax(0, 1fr);
       }
-      .nav-right {
-        width: 100%;
-        justify-content: space-between;
-      }
-      .nav-links {
-        display: none; /* 小螢幕只留按鈕就好 */
+      .hero-right {
+        order: -1;
+        margin-bottom: 12px;
       }
       .cards-grid-3,
       .gallery {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .nav-links {
+        display: none;
       }
     }
 
@@ -456,55 +594,99 @@
       .two-col {
         grid-template-columns: minmax(0, 1fr);
       }
-      .nav-right {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-      .nav-actions {
-        width: 100%;
-      }
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <main>
-      <!-- NAV（整合 hero 有用資訊） -->
-      <div class="nav-wrapper">
-        <div class="nav">
-          <div class="nav-left">
-            <div class="profile-img-nav-wrap">
-              <img src="Salon Picture.jpg" alt="Portrait of Steven Liu" class="profile-img-nav" />
-            </div>
-            <div class="nav-text-block">
-              <div class="nav-title-row">
-                <div class="nav-title">Steven Liu</div>
-                <div class="nav-availability">Available · Jan. 5th 2026</div>
-              </div>
-              <div class="nav-subtitle">Translational Oncology · Small Molecule Drug Discovery</div>
-              <div class="nav-meta">Ph.D. Biomedical Sciences · Target roles: Research Scientist / Senior Research Associate</div>
-            </div>
-          </div>
-          <div class="nav-right">
-            <nav class="nav-links">
-              <a href="#about">About</a>
-              <a href="#education">Education</a>
-              <a href="#experience">Experience</a>
-              <a href="#work">My Work</a>
-              <a href="#skills">Skills</a>
-              <a href="#publications">Publications</a>
-              <a href="#contact">Contact</a>
-            </nav>
-            <div class="nav-actions">
-              <a class="btn-primary" href="#work">View my work</a>
-              <a class="btn-ghost" href="Portfolio_Steven_Liu-3.pdf" target="_blank" rel="noreferrer">Portfolio PDF</a>
-            </div>
+    <header>
+      <div class="nav">
+        <div class="nav-left">
+          <div class="logo-circle">SL</div>
+          <div>
+            <div class="nav-title">Steven Liu</div>
+            <div class="nav-subtitle">Translational Oncology · Small Molecule Drug Discovery</div>
           </div>
         </div>
+        <nav class="nav-links">
+          <a href="#about">About</a>
+          <a href="#education">Education</a>
+          <a href="#experience">Experience</a>
+          <a href="#work">My Work</a>
+          <a href="#skills">Skills</a>
+          <a href="#publications">Publications</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
+    </header>
 
-      <!-- About -->
+    <main>
+      <!-- HERO：左右內容合併在同一張大卡片 -->
+      <section class="hero" id="top">
+        <div class="hero-shell">
+          <div class="hero-layout">
+            <div class="hero-left">
+              <div class="hero-pill">
+                <span class="hero-pill-dot"></span>
+                Seeking Research Scientist / Senior Research Associate roles in oncology &amp; small-molecule drug discovery
+              </div>
+              <h1 class="hero-title">
+                Designing degrader-based therapies at the interface of cancer biology and data science.
+              </h1>
+              <p class="hero-tagline">
+                Ph.D. in Biomedical Sciences with 5+ years of translational oncology and cell-based pharmacology experience, seeking Research Scientist roles advancing targeted protein degraders and cancer therapeutics.
+              </p>
+              <div class="hero-grid">
+                <div class="hero-chip">Transcriptional CDKs</div>
+                <div class="hero-chip">PROTAC degraders</div>
+                <div class="hero-chip">Cell-based assays</div>
+                <div class="hero-chip">Antibody-based assays</div>
+                <div class="hero-chip">Bioinfo. analysis</div>
+                <div class="hero-chip">Biochemical assays</div>
+              </div>
+
+              <div class="hero-contact">
+                <span><strong>Mobile:</strong> +1-979-213-2157</span>
+                <span>·</span>
+                <span><strong>Email:</strong> <a href="mailto:tzuhao.steven.liu@gmail.com">tzuhao.steven.liu@gmail.com</a></span>
+                <span>·</span>
+                <span><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tzu-hao-liu" target="_blank" rel="noreferrer">Steven Liu</a></span>
+              </div>
+
+              <div class="hero-buttons">
+                <a class="btn-primary" href="#work">View my work ↓</a>
+                <a class="btn-ghost" href="Portfolio_Steven_Liu-3.pdf" target="_blank" rel="noreferrer">Download portfolio PDF</a>
+              </div>
+            </div>
+
+            <div class="hero-right">
+              <div class="hero-card">
+                <div class="badge-floating">Available · Jan. 5th 2026</div>
+                <div class="profile-img-wrap">
+                  <img src="Salon Picture.jpg" alt="Portrait of Steven Liu" class="profile-img" />
+                </div>
+                <div class="hero-role">Ph.D. · Biomedical Sciences</div>
+                <div class="hero-name">Tzu-Hao "Steven" Liu</div>
+                <div class="hero-highlight">
+                  Translational oncology scientist specializing in transcriptional CDKs, PROTAC-style degraders, and data-driven therapeutic discovery.
+                </div>
+                <div class="hero-mini-grid">
+                  <div class="mini-card">
+                    <div class="mini-label">Current</div>
+                    <div class="mini-value">Doctoral Candidate Research Associate at Tulane University School of Medicine</div>
+                  </div>
+                  <div class="mini-card">
+                    <div class="mini-label">Target Roles</div>
+                    <div class="mini-value">Research Scientist / Senior Research Associate</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       <section class="section" id="about">
         <div class="section-header">
           <div class="section-title">About Me</div>
@@ -526,7 +708,6 @@
         </div>
       </section>
 
-      <!-- Education -->
       <section class="section" id="education">
         <div class="section-header">
           <div class="section-title">Education</div>
@@ -546,7 +727,6 @@
         </div>
       </section>
 
-      <!-- Experience -->
       <section class="section" id="experience">
         <div class="section-header">
           <div class="section-title">Work Experience</div>
@@ -568,7 +748,6 @@
         </div>
       </section>
 
-      <!-- My Work -->
       <section class="section" id="work">
         <div class="section-header">
           <div class="section-title">My Work</div>
@@ -633,7 +812,6 @@
         </div>
       </section>
 
-      <!-- Skills -->
       <section class="section" id="skills">
         <div class="section-header">
           <div class="section-title">Technical Skills &amp; Methods</div>
@@ -701,7 +879,6 @@
         </div>
       </section>
 
-      <!-- Gallery -->
       <section class="section" id="gallery">
         <div class="section-header">
           <div class="section-title">Data &amp; Figures Gallery</div>
@@ -841,7 +1018,6 @@
         </div>
       </section>
 
-      <!-- Publications -->
       <section class="section" id="publications">
         <div class="section-header">
           <div class="section-title">Publications &amp; Patent</div>
@@ -850,33 +1026,34 @@
         <div class="section-body">
           <ul class="pub-list">
             <li>
-              Liu, T.-H., Lyu, K., Zhao, J. C., Dang, X., Wang, X., &amp; Ji, J.-Y. Development of potent and selective PROTAC degraders
+              <strong><u>Liu, T.-H.</u></strong>, Lyu, K., Zhao, J. C., Dang, X., Wang, X., &amp; Ji, J.-Y. Development of potent and selective PROTAC degraders
               targeting transcriptional CDKs. <em>(Manuscript in preparation).</em>
             </li>
             <li>
-              Liu, T.-H., Li, X., Hsu, F. N., Sun, J., Niu, Y., Xing, Y., Liu, M., Liu, Y., Hemba-Waduge, R. U., Ni, J.-Q., &amp; Ji, J.-Y.
+              <strong><u>Liu, T.-H.</u></strong>, Li, X., Hsu, F. N., Sun, J., Niu, Y., Xing, Y., Liu, M., Liu, Y., Hemba-Waduge, R. U., Ni, J.-Q., &amp; Ji, J.-Y.
               Asymmetric interdependency among the four subunits of the CDK8 module. <em>(Manuscript in preparation).</em>
             </li>
             <li>
-              Li, X., Liu, M., Xing, Y., Niu, Y., Liu, T.-H., Sun, J. L., Liu, Y., Hemba-Waduge, R. U., &amp; Ji, J.-Y.
+              Li, X., Liu, M., Xing, Y., Niu, Y., <strong><u>Liu, T.-H.</u></strong>, Sun, J. L., Liu, Y., Hemba-Waduge, R. U., &amp; Ji, J.-Y.
               Distinct effects of CDK8 module subunits on cellular growth and proliferation in <em>Drosophila</em>. <em>Development</em>, 2024.
             </li>
             <li>
-              Liu, M., Hemba-Waduge, R. U., Li, X., Huang, X., Liu, T.-H., Han, X., Wang, Y., &amp; Ji, J.-Y.
+              Liu, M., Hemba-Waduge, R. U., Li, X., Huang, X., <strong><u>Liu, T.-H.</u></strong>, Han, X., Wang, Y., &amp; Ji, J.-Y.
               Wnt/Wingless signaling promotes lipid mobilization through transcriptional repression. <em>PNAS</em>, 2024.
             </li>
             <li>
-              Li, X., Zhang, M., Liu, M., Liu, T.-H., Hemba-Waduge, R. U., &amp; Ji, J.-Y.
+              Li, X., Zhang, M., Liu, M., <strong><u>Liu, T.-H.</u></strong>, Hemba-Waduge, R. U., &amp; Ji, J.-Y.
               Cdk8 attenuates lipogenesis by inhibiting SREBP-dependent transcription in <em>Drosophila</em>. <em>Disease Models &amp; Mechanisms</em>, 2022.
             </li>
             <li>
-              <strong>Provisional patent (in preparation):</strong> Selective PROTAC degraders targeting transcriptional CDKs and their use in cancer therapy. Liu, T.-H., Lyu, K., Wang, X., Ji, J.-Y., et al.
+              <strong>Provisional patent (in preparation):</strong> Selective PROTAC degraders targeting transcriptional CDKs and their use in cancer therapy.
+              <strong><u>Liu, T.-H.</u></strong>, Lyu, K., Wang, X., Ji, J.-Y., et al.
             </li>
           </ul>
         </div>
       </section>
 
-      <!-- Contact（照你說的完全沒動） -->
+      <!-- Contact：照你的要求不動內容結構 -->
       <section class="section" id="contact">
         <div class="section-header">
           <div class="section-title">Contact</div>
