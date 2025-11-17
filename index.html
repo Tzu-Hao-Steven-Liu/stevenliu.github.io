@@ -10,15 +10,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #020617;
-      --bg-alt: #020617;
-      --card: #0f172a;
+      --bg: #000000;
+      --bg-alt: #050505;
+      --card: #050811;
       --accent: #38bdf8;
-      --accent-soft: rgba(56,189,248,0.18);
+      --accent-soft: rgba(56,189,248,0.2);
       --text: #f9fafb;
-      --muted: #cbd5f5;
-      --border: #1e293b;
-      --shadow-soft: 0 18px 60px rgba(15,23,42,0.85);
+      --muted: #9ca3af;
+      --border: #111827;
+      --shadow-soft: 0 18px 60px rgba(0,0,0,0.9);
       --radius-lg: 18px;
       --radius-xl: 26px;
       --transition-fast: 180ms ease-out;
@@ -28,7 +28,7 @@
 
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: radial-gradient(circle at top, #0f172a 0, #020617 60%, #020617 100%);
+      background: radial-gradient(circle at top, #111827 0, #020617 40%, #000000 100%);
       color: var(--text);
       line-height: 1.6;
       min-height: 100vh;
@@ -49,7 +49,7 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(18px);
-      background: linear-gradient(to bottom, rgba(15,23,42,0.94), rgba(15,23,42,0.82), transparent);
+      background: linear-gradient(to bottom, rgba(0,0,0,0.96), rgba(0,0,0,0.86), transparent);
       margin-bottom: 16px;
     }
 
@@ -58,7 +58,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 12px 0 10px;
-      border-bottom: 1px solid rgba(148,163,184,0.35);
+      border-bottom: 1px solid rgba(31,41,55,0.9);
     }
 
     .nav-left {
@@ -78,7 +78,7 @@
       font-weight: 700;
       font-size: 15px;
       color: #e5f4ff;
-      box-shadow: 0 10px 30px rgba(56,189,248,0.4);
+      box-shadow: 0 10px 26px rgba(56,189,248,0.45);
     }
 
     .nav-title {
@@ -135,11 +135,12 @@
 
     .hero-left {
       background:
-        radial-gradient(circle at top left, rgba(56,189,248,0.04), transparent 56%),
-        radial-gradient(circle at bottom right, rgba(129,140,248,0.06), transparent 50%);
+        radial-gradient(circle at top left, rgba(15,15,15,0.9), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(15,15,15,0.7), transparent 55%),
+        #02040a;
       border-radius: var(--radius-xl);
       padding: 22px 22px 20px;
-      border: 1px solid rgba(148,163,184,0.32);
+      border: 1px solid rgba(31,41,55,0.9);
       box-shadow: var(--shadow-soft);
       position: relative;
       overflow: hidden;
@@ -151,7 +152,7 @@
       gap: 8px;
       padding: 3px 9px 3px 4px;
       border-radius: 999px;
-      background: rgba(15,23,42,0.96);
+      background: rgba(0,0,0,0.9);
       border: 1px solid rgba(56,189,248,0.7);
       font-size: 11px;
       color: var(--muted);
@@ -173,9 +174,9 @@
     }
 
     .hero-title span {
-      background: linear-gradient(to right, #38bdf8, #a855f7);
-      -webkit-background-clip: text;
-      color: transparent;
+      background: none;
+      -webkit-background-clip: border-box;
+      color: var(--text);
     }
 
     .hero-tagline {
@@ -196,8 +197,8 @@
       font-size: 12px;
       padding: 7px 8px;
       border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.45);
-      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(55,65,81,0.9);
+      background: rgba(3,7,18,0.95);
       color: #e5e7eb;
       text-align: center;
       white-space: normal;
@@ -241,22 +242,22 @@
       background: linear-gradient(to right, #38bdf8, #6366f1);
       color: #020617;
       font-weight: 600;
-      box-shadow: 0 16px 36px rgba(56,189,248,0.45);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.85);
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 20px 46px rgba(56,189,248,0.6);
+      box-shadow: 0 20px 46px rgba(0,0,0,0.95);
     }
 
     .btn-ghost {
-      background: rgba(15,23,42,0.92);
-      border-color: rgba(148,163,184,0.6);
+      background: rgba(3,7,18,0.96);
+      border-color: rgba(55,65,81,0.9);
       color: var(--muted);
     }
 
     .btn-ghost:hover {
-      background: rgba(15,23,42,1);
+      background: #020617;
       border-color: var(--accent);
       color: var(--text);
       transform: translateY(-1px);
@@ -269,9 +270,11 @@
     .hero-card {
       border-radius: var(--radius-xl);
       padding: 14px 14px 16px;
-      background: radial-gradient(circle at top, rgba(56,189,248,0.12), rgba(15,23,42,0.96) 46%, #020617 100%);
-      border: 1px solid rgba(148,163,184,0.45);
-      box-shadow: 0 22px 50px rgba(15,23,42,0.95);
+      background:
+        radial-gradient(circle at top, rgba(15,23,42,0.65), transparent 60%),
+        #02040a;
+      border: 1px solid rgba(31,41,55,0.95);
+      box-shadow: 0 22px 50px rgba(0,0,0,1);
       position: relative;
       overflow: hidden;
     }
@@ -282,7 +285,7 @@
       border-radius: 999px;
       border: 2px solid rgba(148,163,184,0.7);
       padding: 3px;
-      background: radial-gradient(circle at 25% 15%, #38bdf8 0, #0f172a 60%, #020617 100%);
+      background: radial-gradient(circle at 25% 15%, #38bdf8 0, #020617 60%, #000000 100%);
       margin-bottom: 12px;
     }
 
@@ -291,11 +294,9 @@
       height: 100%;
       border-radius: inherit;
       object-fit: cover;
-      /* ⬇ 這行是重點：調整裁切位置 */
-      object-position: 50% 30%;  /* center 20% from top，讓上面多露一點 */
+      object-position: 50% 30%;
       background: #020617;
     }
-    
 
     .hero-role {
       font-size: 13px;
@@ -313,8 +314,8 @@
       font-size: 13px;
       border-radius: 12px;
       padding: 6px 8px;
-      background: rgba(15,23,42,0.95);
-      border: 1px solid rgba(148,163,184,0.5);
+      background: rgba(0,0,0,0.85);
+      border: 1px solid rgba(55,65,81,0.9);
       margin-bottom: 10px;
     }
 
@@ -326,7 +327,7 @@
     }
 
     .mini-card {
-      background: rgba(15,23,42,0.95);
+      background: rgba(3,7,18,0.98);
       border-radius: 12px;
       padding: 7px 8px;
       border: 1px solid rgba(30,64,175,0.8);
@@ -351,7 +352,7 @@
       font-size: 12px;
       padding: 5px 7px;
       border-radius: 999px;
-      background: rgba(15,23,42,0.98);
+      background: rgba(0,0,0,0.96);
       border: 1px solid rgba(129,140,248,0.9);
     }
 
@@ -360,11 +361,11 @@
       border-radius: var(--radius-lg);
       padding: 18px 18px 16px;
       background:
-        radial-gradient(circle at top left, rgba(56,189,248,0.04), transparent 58%),
-        radial-gradient(circle at bottom right, rgba(56,189,248,0.03), transparent 52%),
-        rgba(15,23,42,0.98);
-      border: 1px solid rgba(30,64,175,0.7);
-      box-shadow: 0 18px 42px rgba(15,23,42,0.9);
+        radial-gradient(circle at top left, rgba(15,15,15,0.9), transparent 58%),
+        radial-gradient(circle at bottom right, rgba(15,15,15,0.7), transparent 52%),
+        #02040a;
+      border: 1px solid rgba(31,41,55,0.95);
+      box-shadow: 0 18px 42px rgba(0,0,0,0.95);
     }
 
     .section-header {
@@ -403,7 +404,7 @@
       background: var(--card);
       border-radius: 14px;
       padding: 10px 11px;
-      border: 1px solid rgba(30,64,175,0.8);
+      border: 1px solid rgba(31,41,55,0.95);
       font-size: 13px;
     }
 
@@ -437,8 +438,8 @@
       font-size: 12px;
       padding: 4px 8px;
       border-radius: 999px;
-      background: rgba(15,23,42,0.95);
-      border: 1px solid rgba(148,163,184,0.6);
+      background: rgba(3,7,18,0.98);
+      border: 1px solid rgba(55,65,81,0.95);
       white-space: nowrap;
       color: var(--muted);
     }
@@ -455,7 +456,7 @@
       background: var(--card);
       border-radius: 14px;
       padding: 10px 11px;
-      border: 1px solid rgba(30,64,175,0.85);
+      border: 1px solid rgba(31,41,55,0.95);
     }
 
     .card-title {
@@ -508,14 +509,15 @@
     .gallery-card {
       background: var(--card);
       border-radius: 14px;
-      border: 1px solid rgba(56,189,248,0.55);
+      border: 1px solid rgba(37,99,235,0.7);
       overflow: hidden;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.9);
     }
 
     .gallery-img-wrap {
       width: 100%;
       aspect-ratio: 4 / 3;
-      background: radial-gradient(circle at top, #1e293b, #020617 70%);
+      background: radial-gradient(circle at top, #020617, #000000 70%);
     }
 
     .gallery-img {
@@ -527,13 +529,14 @@
 
     .gallery-caption {
       padding: 7px 8px 8px;
-      border-top: 1px solid rgba(30,64,175,0.85);
+      border-top: 1px solid rgba(31,41,55,0.95);
     }
 
     .gallery-caption-title {
       font-size: 11px;
       font-weight: 600;
       margin-bottom: 2px;
+      color: var(--text);
     }
 
     .pub-list {
@@ -541,6 +544,7 @@
       margin-top: 6px;
       display: grid;
       gap: 5px;
+      color: var(--muted);
     }
 
     .pub-list li {
@@ -553,7 +557,7 @@
       color: var(--muted);
       text-align: center;
       padding-top: 12px;
-      border-top: 1px solid rgba(30,64,175,0.8);
+      border-top: 1px solid rgba(31,41,55,0.95);
     }
 
     @media (max-width: 840px) {
@@ -608,7 +612,7 @@
       <section class="hero" id="top">
         <div class="hero-right">
           <div class="hero-card">
-            <div class="badge-floating">Available · Jan 5th 2026</div>
+            <div class="badge-floating">Available · Jan. 5th 2026</div>
             <div class="profile-img-wrap">
               <img src="Salon Picture.jpg" alt="Portrait of Steven Liu" class="profile-img" />
             </div>
@@ -620,7 +624,7 @@
             <div class="hero-mini-grid">
               <div class="mini-card">
                 <div class="mini-label">Current</div>
-                <div class="mini-value">Tulane University School of Medicine</div>
+                <div class="mini-value">Doctoral Candidate Research Associate at Tulane University School of Medicine</div>
               </div>
               <div class="mini-card">
                 <div class="mini-label">Target Roles</div>
@@ -639,7 +643,7 @@
             Designing degrader-based therapies at the interface of cancer biology and data science.
           </h1>
           <p class="hero-tagline">
-            Ph.D. candidate in Biomedical Sciences with 5+ years of translational oncology and cell-based pharmacology experience, seeking Research Scientist roles advancing targeted protein degraders and cancer therapeutics.
+            Ph.D. in Biomedical Sciences with 5+ years of translational oncology and cell-based pharmacology experience, seeking Research Scientist roles advancing targeted protein degraders and cancer therapeutics.
           </p>
           <div class="hero-grid">
             <div class="hero-chip">Transcriptional CDKs</div>
@@ -862,11 +866,17 @@
           <div class="section-title">Data &amp; Figures Gallery</div>
           <div class="section-kicker">Selected Visuals</div>
         </div>
+        <div class="section-body">
           <div class="gallery">
             <!-- Target Validation (3) -->
             <div class="gallery-card">
               <div class="gallery-img-wrap">
-                <img src="01.png" alt="Target validation" class="gallery-img" />
+                <img
+                  src="01.png"
+                  alt="Target validation"
+                  class="gallery-img"
+                  style="object-position: 50% 30%;"
+                />
               </div>
               <div class="gallery-caption">
                 <div class="gallery-caption-title">Target Validation · Proximity-Ligation Assay</div>
@@ -875,7 +885,12 @@
 
             <div class="gallery-card">
               <div class="gallery-img-wrap">
-                <img src="08.png" alt="Phenotypic response" class="gallery-img" />
+                <img
+                  src="08.png"
+                  alt="Phenotypic response"
+                  class="gallery-img"
+                  style="object-position: 50% 30%;"
+                />
               </div>
               <div class="gallery-caption">
                 <div class="gallery-caption-title">Phenotypic Response · Immunoblotting</div>
@@ -884,7 +899,12 @@
 
             <div class="gallery-card">
               <div class="gallery-img-wrap">
-                <img src="07.png" alt="Omics Analyses" class="gallery-img" />
+                <img
+                  src="07.png"
+                  alt="Omics Analyses"
+                  class="gallery-img"
+                  style="object-position: 50% 30%;"
+                />
               </div>
               <div class="gallery-caption">
                 <div class="gallery-caption-title">Omics Analyses · Volcano Plot of Quantitative Proteomics</div>
@@ -894,7 +914,12 @@
             <!-- Phenotypic Response (3) -->
             <div class="gallery-card">
               <div class="gallery-img-wrap">
-                <img src="17.png" alt="Target validation" class="gallery-img" />
+                <img
+                  src="17.png"
+                  alt="Target validation"
+                  class="gallery-img"
+                  style="object-position: 50% 30%;"
+                />
               </div>
               <div class="gallery-caption">
                 <div class="gallery-caption-title">Target Validation · RT-qPCR</div>
@@ -903,7 +928,12 @@
 
             <div class="gallery-card">
               <div class="gallery-img-wrap">
-                <img src="02.png" alt="Phenotypic response" class="gallery-img" />
+                <img
+                  src="02.png"
+                  alt="Phenotypic response"
+                  class="gallery-img"
+                  style="object-position: 50% 30%;"
+                />
               </div>
               <div class="gallery-caption">
                 <div class="gallery-caption-title">Phenotypic response · Cell Proliferation Assay</div>
@@ -912,7 +942,12 @@
 
             <div class="gallery-card">
               <div class="gallery-img-wrap">
-                <img src="06.png" alt="Omics Analyses" class="gallery-img" />
+                <img
+                  src="06.png"
+                  alt="Omics Analyses"
+                  class="gallery-img"
+                  style="object-position: 50% 30%;"
+                />
               </div>
               <div class="gallery-caption">
                 <div class="gallery-caption-title">Omics Analyses · UMAP Analysis</div>
@@ -922,7 +957,12 @@
             <!-- Omics & Survival (3) -->
             <div class="gallery-card">
               <div class="gallery-img-wrap">
-                <img src="18.png" alt="Target validation" class="gallery-img" />
+                <img
+                  src="18.png"
+                  alt="Target validation"
+                  class="gallery-img"
+                  style="object-position: 50% 30%;"
+                />
               </div>
               <div class="gallery-caption">
                 <div class="gallery-caption-title">Target validation · HPG Assay</div>
@@ -931,7 +971,12 @@
 
             <div class="gallery-card">
               <div class="gallery-img-wrap">
-                <img src="16.png" alt="Phenotypic response" class="gallery-img" />
+                <img
+                  src="16.png"
+                  alt="Phenotypic response"
+                  class="gallery-img"
+                  style="object-position: 50% 30%;"
+                />
               </div>
               <div class="gallery-caption">
                 <div class="gallery-caption-title">Phenotypic response · Cell Cycle Analysis</div>
@@ -940,7 +985,12 @@
 
             <div class="gallery-card">
               <div class="gallery-img-wrap">
-                <img src="14.png" alt="Omics Analyses" class="gallery-img" />
+                <img
+                  src="14.png"
+                  alt="Omics Analyses"
+                  class="gallery-img"
+                  style="object-position: 50% 30%;"
+                />
               </div>
               <div class="gallery-caption">
                 <div class="gallery-caption-title">Omics Analyses · NCI-60 Analysis</div>
@@ -955,64 +1005,7 @@
           <div class="section-title">Publications &amp; Patent</div>
           <div class="section-kicker">Selected Outputs</div>
         </div>
-        <ul class="pub-list">
-          <li>
-            Liu, T.-H., Lyu, K., Zhao, J. C., Dang, X., Wang, X., &amp; Ji, J.-Y. Development of potent and selective PROTAC degraders
-            targeting transcriptional CDKs. <em>(Manuscript in preparation).</em>
-          </li>
-          <li>
-            Liu, T.-H., Li, X., Hsu, F. N., Sun, J., Niu, Y., Xing, Y., Liu, M., Liu, Y., Hemba-Waduge, R. U., Ni, J.-Q., &amp; Ji, J.-Y.
-            Asymmetric interdependency among the four subunits of the CDK8 module. <em>(Manuscript in preparation).</em>
-          </li>
-          <li>
-            Li, X., Liu, M., Xing, Y., Niu, Y., Liu, T.-H., Sun, J. L., Liu, Y., Hemba-Waduge, R. U., &amp; Ji, J.-Y.
-            Distinct effects of CDK8 module subunits on cellular growth and proliferation in <em>Drosophila</em>. <em>Development</em>, 2024.
-          </li>
-          <li>
-            Liu, M., Hemba-Waduge, R. U., Li, X., Huang, X., Liu, T.-H., Han, X., Wang, Y., &amp; Ji, J.-Y.
-            Wnt/Wingless signaling promotes lipid mobilization through transcriptional repression. <em>PNAS</em>, 2024.
-          </li>
-          <li>
-            Li, X., Zhang, M., Liu, M., Liu, T.-H., Hemba-Waduge, R. U., &amp; Ji, J.-Y.
-            Cdk8 attenuates lipogenesis by inhibiting SREBP-dependent transcription in <em>Drosophila</em>. <em>Disease Models &amp; Mechanisms</em>, 2022.
-          </li>
-          <li>
-            <strong>Provisional patent (in preparation):</strong> Selective PROTAC degraders targeting transcriptional CDKs and their use in cancer therapy. Liu, T.-H., Lyu, K., Wang, X., Ji, J.-Y., et al.
-          </li>
-        </ul>
-      </section>
-
-      <section class="section" id="contact">
-        <div class="section-header">
-          <div class="section-title">Contact</div>
-          <div class="section-kicker">Let’s Connect</div>
-        </div>
         <div class="section-body">
-          <p>
-            I am actively exploring Scientist and Postdoctoral Research Associate opportunities in translational oncology,
-            protein degradation, and small-molecule drug discovery.
-          </p>
-          <div class="pill-row">
-            <div class="pill">Location: USA</div>
-            <div class="pill">Open to relocation</div>
-            <div class="pill">Translational oncology</div>
-            <div class="pill">Degrader discovery</div>
-          </div>
-          <p style="margin-top: 8px;">
-            <strong>Email:</strong> <a href="mailto:tzuhao.steven.liu@gmail.com">tzuhao.steven.liu@gmail.com</a><br />
-            <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tzu-hao-liu" target="_blank" rel="noreferrer">www.linkedin.com/in/tzu-hao-liu</a>
-          </p>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      © <span id="year"></span> Tzu-Hao (Steven) Liu · Built with GitHub Pages.
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+          <ul class="pub-list">
+            <li>
+              Liu, T.-H., Lyu, K., Zhao, J. C., Dang, X., Wang, X., &amp; Ji, J.-Y. Development of potent and selec
