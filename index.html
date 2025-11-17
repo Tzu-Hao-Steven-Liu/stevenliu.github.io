@@ -28,7 +28,7 @@
 
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #000000; /* 全黑 */
+      background: radial-gradient(circle at top, #111827 0, #020617 40%, #000000 100%);
       color: var(--text);
       line-height: 1.6;
       min-height: 100vh;
@@ -124,32 +124,26 @@
       width: 100%;
     }
 
-    /* HERO（左右合在同一個大卡片裡） */
     .hero {
-      margin-top: 18px;
-      margin-bottom: 28px;
-    }
-
-    .hero-shell {
-      border-radius: var(--radius-xl);
-      padding: 22px 22px 20px;
-      background:
-        radial-gradient(circle at top left, rgba(15,15,15,0.9), transparent 60%),
-        radial-gradient(circle at bottom right, rgba(15,15,15,0.7), transparent 55%),
-        #02040a;
-      border: 1px solid rgba(31,41,55,0.95);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .hero-layout {
       display: grid;
       grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
       gap: 26px;
+      margin-top: 18px;
+      margin-bottom: 28px;
       align-items: center;
     }
 
     .hero-left {
+      background:
+        radial-gradient(circle at top left, rgba(15,15,15,0.9), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(15,15,15,0.7), transparent 55%),
+        #02040a;
+      border-radius: var(--radius-xl);
+      padding: 22px 22px 20px;
+      border: 1px solid rgba(31,41,55,0.9);
+      box-shadow: var(--shadow-soft);
       position: relative;
+      overflow: hidden;
     }
 
     .hero-pill {
@@ -231,8 +225,7 @@
       margin-top: 14px;
     }
 
-    .btn-primary,
-    .btn-ghost {
+    .btn-primary, .btn-ghost {
       border-radius: 999px;
       padding: 7px 14px;
       font-size: 13px;
@@ -242,11 +235,7 @@
       align-items: center;
       gap: 6px;
       text-decoration: none;
-      transition:
-        transform var(--transition-fast),
-        box-shadow var(--transition-fast),
-        background var(--transition-fast),
-        border-color var(--transition-fast);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
     }
 
     .btn-primary {
@@ -278,12 +267,16 @@
       position: relative;
     }
 
-    /* hero-card 改成純 layout，不再是第二個框框 */
     .hero-card {
-      padding: 0;
-      background: transparent;
-      border: none;
-      box-shadow: none;
+      border-radius: var(--radius-xl);
+      padding: 14px 14px 16px;
+      background:
+        radial-gradient(circle at top, rgba(15,23,42,0.65), transparent 60%),
+        #02040a;
+      border: 1px solid rgba(31,41,55,0.95);
+      box-shadow: 0 22px 50px rgba(0,0,0,1);
+      position: relative;
+      overflow: hidden;
     }
 
     .profile-img-wrap {
@@ -301,7 +294,7 @@
       height: 100%;
       border-radius: inherit;
       object-fit: cover;
-      object-position: 50% 15%; /* 調整頭像位置 */
+      object-position: 50% 30%;
       background: #020617;
     }
 
@@ -354,16 +347,15 @@
 
     .badge-floating {
       position: absolute;
-      right: 0;
-      top: 0;
+      right: 10px;
+      top: 10px;
       font-size: 12px;
-      padding: 4px 8px;
+      padding: 5px 7px;
       border-radius: 999px;
       background: rgba(0,0,0,0.96);
       border: 1px solid rgba(129,140,248,0.9);
     }
 
-    /* SECTION 通用卡片 */
     .section {
       margin-bottom: 26px;
       border-radius: var(--radius-lg);
@@ -439,7 +431,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 7px;
-      margin-top: 6px;
+      margin-top: 8px;
     }
 
     .pill {
@@ -569,15 +561,13 @@
     }
 
     @media (max-width: 840px) {
-      .hero-layout {
+      .hero {
         grid-template-columns: minmax(0, 1fr);
       }
       .hero-right {
         order: -1;
-        margin-bottom: 12px;
       }
-      .cards-grid-3,
-      .gallery {
+      .cards-grid-3, .gallery {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
       .nav-links {
@@ -587,11 +577,9 @@
 
     @media (max-width: 640px) {
       .page { padding: 16px 12px 30px; }
-      .section { padding: 16px 13px 13px; }
-      .cards-grid-3,
-      .gallery,
-      .skills-grid,
-      .two-col {
+      .hero-left, .section { padding: 16px 13px 13px; }
+      .hero-title { font-size: 24px; }
+      .cards-grid-3, .gallery, .skills-grid, .two-col {
         grid-template-columns: minmax(0, 1fr);
       }
     }
@@ -615,74 +603,64 @@
           <a href="#work">My Work</a>
           <a href="#skills">Skills</a>
           <a href="#publications">Publications</a>
-          <a href="#contact">Contact</a>
         </nav>
       </div>
     </header>
 
     <main>
-      <!-- HERO：左右內容合併在同一張大卡片 -->
       <section class="hero" id="top">
-        <div class="hero-shell">
-          <div class="hero-layout">
-            <div class="hero-left">
-              <div class="hero-pill">
-                <span class="hero-pill-dot"></span>
-                Seeking Research Scientist / Senior Research Associate roles in oncology &amp; small-molecule drug discovery
-              </div>
-              <h1 class="hero-title">
-                Designing degrader-based therapies at the interface of cancer biology and data science.
-              </h1>
-              <p class="hero-tagline">
-                Ph.D. in Biomedical Sciences with 5+ years of translational oncology and cell-based pharmacology experience, seeking Research Scientist roles advancing targeted protein degraders and cancer therapeutics.
-              </p>
-              <div class="hero-grid">
-                <div class="hero-chip">Transcriptional CDKs</div>
-                <div class="hero-chip">PROTAC degraders</div>
-                <div class="hero-chip">Cell-based assays</div>
-                <div class="hero-chip">Antibody-based assays</div>
-                <div class="hero-chip">Bioinfo. analysis</div>
-                <div class="hero-chip">Biochemical assays</div>
-              </div>
-
-              <div class="hero-contact">
-                <span><strong>Mobile:</strong> +1-979-213-2157</span>
-                <span>·</span>
-                <span><strong>Email:</strong> <a href="mailto:tzuhao.steven.liu@gmail.com">tzuhao.steven.liu@gmail.com</a></span>
-                <span>·</span>
-                <span><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tzu-hao-liu" target="_blank" rel="noreferrer">Steven Liu</a></span>
-              </div>
-
-              <div class="hero-buttons">
-                <a class="btn-primary" href="#work">View my work ↓</a>
-                <a class="btn-ghost" href="Portfolio_Steven_Liu-3.pdf" target="_blank" rel="noreferrer">Download portfolio PDF</a>
-              </div>
+        <div class="hero-right">
+          <div class="hero-card">
+            <div class="badge-floating">Available · Jan. 5th 2026</div>
+            <div class="profile-img-wrap">
+              <img src="Salon Picture.jpg" alt="Portrait of Steven Liu" class="profile-img" />
             </div>
-
-            <div class="hero-right">
-              <div class="hero-card">
-                <div class="badge-floating">Available · Jan. 5th 2026</div>
-                <div class="profile-img-wrap">
-                  <img src="Salon Picture.jpg" alt="Portrait of Steven Liu" class="profile-img" />
-                </div>
-                <div class="hero-role">Ph.D. · Biomedical Sciences</div>
-                <div class="hero-name">Tzu-Hao "Steven" Liu</div>
-                <div class="hero-highlight">
-                  Translational oncology scientist specializing in transcriptional CDKs, PROTAC-style degraders, and data-driven therapeutic discovery.
-                </div>
-                <div class="hero-mini-grid">
-                  <div class="mini-card">
-                    <div class="mini-label">Current</div>
-                    <div class="mini-value">Doctoral Candidate Research Associate at Tulane University School of Medicine</div>
-                  </div>
-                  <div class="mini-card">
-                    <div class="mini-label">Target Roles</div>
-                    <div class="mini-value">Research Scientist / Senior Research Associate</div>
-                  </div>
-                </div>
-              </div>
+            <div class="hero-role">Ph.D. · Biomedical Sciences</div>
+            <div class="hero-name">Tzu-Hao "Steven" Liu</div>
+            <div class="hero-highlight">
+              Translational oncology scientist specializing in transcriptional CDKs, PROTAC-style degraders, and data-driven therapeutic discovery.
             </div>
+            <!-- mini-cards removed as requested -->
+          </div>
+        </div>
 
+        <div class="hero-left">
+          <div class="hero-pill">
+            <span class="hero-pill-dot"></span>
+            I am actively exploring Scientist and Postdoctoral Research Associate opportunities in translational oncology,
+            protein degradation, and small-molecule drug discovery.
+          </div>
+
+          <!-- hero-title & hero-tagline removed as requested -->
+
+          <div class="hero-grid">
+            <div class="hero-chip">Transcriptional CDKs</div>
+            <div class="hero-chip">PROTAC degraders</div>
+            <div class="hero-chip">Cell-based assays</div>
+            <div class="hero-chip">Antibody-based assays</div>
+            <div class="hero-chip">Bioinfo. analysis</div>
+            <div class="hero-chip">Biochemical assays</div>
+          </div>
+
+          <div class="hero-contact">
+            <span><strong>Mobile:</strong> +1-979-213-2157</span>
+            <span>·</span>
+            <span><strong>Email:</strong> <a href="mailto:tzuhao.steven.liu@gmail.com">tzuhao.steven.liu@gmail.com</a></span>
+            <span>·</span>
+            <span><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tzu-hao-liu" target="_blank" rel="noreferrer">Steven Liu</a></span>
+          </div>
+
+          <!-- contact pills moved up from Contact section -->
+          <div class="pill-row">
+            <div class="pill">Location: USA</div>
+            <div class="pill">Open to relocation</div>
+            <div class="pill">Translational oncology</div>
+            <div class="pill">Degrader discovery</div>
+          </div>
+
+          <div class="hero-buttons">
+            <a class="btn-primary" href="#work">View my work ↓</a>
+            <a class="btn-ghost" href="Portfolio_Steven_Liu-3.pdf" target="_blank" rel="noreferrer">Download portfolio PDF</a>
           </div>
         </div>
       </section>
@@ -694,16 +672,16 @@
         </div>
         <div class="section-body">
           <p>
-            I am a translational oncology scientist focused on transcriptional CDKs, NF-κB–related inflammatory signaling, and
-            cytokine-driven pathways in human cancer models. I design and execute mechanistic, cell-based pharmacology studies using
-            multi-parameter flow cytometry, Incucyte-based live-cell imaging, and CRISPR/RNAi perturbations to quantify viability,
-            proliferation, cytotoxicity, apoptosis, and pathway activation under small-molecule inhibitor and degrader treatment.
+            I am a translational oncology scientist who uses cell-based and molecular approaches to understand how transcriptional CDKs
+            and inflammatory signaling shape tumor behaviour and treatment response. My background spans cancer biology, degrader
+            pharmacology, and quantitative analysis, with a consistent focus on connecting target biology to clear hypotheses for
+            new therapies.
           </p>
           <p style="margin-top: 8px;">
-            Beyond generating data, I enjoy building robust assay workflows and analysis pipelines in R and Python to link exposure–response
-            relationships, pathway biology, and omics readouts to clear hypotheses and next-step experiments. I’m comfortable operating in
-            cross-functional, fast-paced discovery teams and translating complex datasets into decision-ready insights for novel cancer
-            therapeutics, including advanced modalities such as targeted protein degraders.
+            In the lab, I like to build robust, modular workflows rather than one-off experiments—designing dose–response and time-course
+            studies with multi-parameter readouts, then using R and Python to turn noisy data into decision-ready summaries for
+            cross-functional project teams. I am comfortable moving between the bench and the notebook, translating experimental
+            results into next-step designs for drug discovery and translational research.
           </p>
         </div>
       </section>
@@ -822,8 +800,8 @@
           <div class="item">
             <div class="skills-title">Gene Editing &amp; Functional Genomics</div>
             <ul class="skills-list">
-              <li>CRISPR KO/KI and screening workflows in human cancer cell models.</li>
-              <li>RNAi (shRNA/siRNA) and lentiviral transduction for target perturbation.</li>
+              <li>Design and execution of CRISPR KO/KI strategies and small-scale screens in human cancer cell models.</li>
+              <li>shRNA/siRNA and lentiviral delivery to modulate gene expression and validate targets.</li>
             </ul>
           </div>
 
@@ -831,9 +809,9 @@
           <div class="item">
             <div class="skills-title">Mammalian Cell Culture &amp; Cell-Based Pharmacology</div>
             <ul class="skills-list">
-              <li>Routine culture of human cancer and immune-relevant cell lines (e.g., LNCaP, 293T, THP-1) with seeding, passaging, and routine mycoplasma testing, including cryopreservation.</li>
-              <li>Cell viability, proliferation, cytotoxicity, cell-cycle, and apoptosis assays to characterize panels of inhibitors and degraders.</li>
-              <li>Multi-parameter flow cytometry and fluorescence-activated cell sorting (FACS); live-cell imaging (e.g., Incucyte) for kinetic readouts.</li>
+              <li>Long-term maintenance, expansion, and banking of diverse human cancer and immune-relevant cell lines (e.g., LNCaP, 293T, THP-1) with routine mycoplasma testing and cryopreservation.</li>
+              <li>Design of plate-based and imaging assays to quantify treatment effects on cell health, proliferation, and death across panels of inhibitors and degraders.</li>
+              <li>Hands-on experience with multi-parameter flow cytometry, FACS, and kinetic live-cell imaging platforms (e.g., Incucyte).</li>
             </ul>
           </div>
 
@@ -841,9 +819,9 @@
           <div class="item">
             <div class="skills-title">Molecular Biology Assays</div>
             <ul class="skills-list">
-              <li>Cloning, plasmid preparation, and DNA/RNA extraction.</li>
-              <li>PCR, RT-PCR, and qRT-PCR assay development and optimization.</li>
-              <li>Hybridization Chain Reaction fluorescence <em>in situ</em> hybridization (HCR-FISH) and related nucleic-acid detection methods.</li>
+              <li>Cloning, plasmid preparation, and high-quality DNA/RNA extraction from mammalian cells and tissues.</li>
+              <li>PCR, RT-PCR, and qRT-PCR assay development, optimization, and data interpretation.</li>
+              <li>Hybridization Chain Reaction fluorescence <em>in situ</em> hybridization (HCR-FISH) and related nucleic-acid detection workflows.</li>
             </ul>
           </div>
 
@@ -851,9 +829,9 @@
           <div class="item">
             <div class="skills-title">Protein &amp; Antibody-Based Assays</div>
             <ul class="skills-list">
-              <li>Protein gel electrophoresis, quantitative and phospho-specific immunoblotting for signaling and target-engagement analysis.</li>
-              <li>Immunoprecipitation / co-immunoprecipitation, ELISA, and cytokine profiling to connect pathway modulation to functional responses.</li>
-              <li>HPG protein synthesis assays, Coomassie and Ponceau S staining, and recombinant protein expression in HEK293.</li>
+              <li>SDS-PAGE and quantitative / phospho-specific immunoblotting for signaling and target-engagement analysis.</li>
+              <li>Immunoprecipitation / co-immunoprecipitation, ELISA, and cytokine profiling to link pathway modulation to functional responses.</li>
+              <li>HPG-based protein synthesis measurements, Coomassie and Ponceau S staining, and small-scale recombinant protein expression in HEK293.</li>
             </ul>
           </div>
 
@@ -861,9 +839,9 @@
           <div class="item">
             <div class="skills-title">Data Analysis, Biostatistics &amp; Bioinformatics</div>
             <ul class="skills-list">
-              <li>GraphPad Prism, FlowJo, Incucyte analysis software, Image Lab, confocal imaging tools, and LabArchives ELN.</li>
-              <li>R and Python on Unix/Linux systems for omics analysis, QC, statistics, and visualization.</li>
-              <li>LLM-assisted, tested analytics pipelines for normalization, QC, and automation to support reproducible decision-making.</li>
+              <li>Routine use of GraphPad Prism, FlowJo, Incucyte analysis software, Image Lab, confocal imaging tools, and LabArchives ELN.</li>
+              <li>R and Python on Unix/Linux systems for QC, statistics, visualization, and basic transcriptomic / proteomic data interpretation.</li>
+              <li>Development of tested, LLM-assisted analytics pipelines to standardize normalization, QC, and reporting across projects.</li>
             </ul>
           </div>
 
@@ -873,7 +851,7 @@
             <ul class="skills-list">
               <li>Cross-functional project coordination and scientific communication with chemistry, bioinformatics, and clinical collaborators.</li>
               <li>Experience with <em>in vivo</em> / <em>ex vivo</em> model systems including <em>Drosophila melanogaster</em> and <em>Mus musculus</em>-based workflows.</li>
-              <li>Familiarity with cGMP, ICH-GCP, and GLP expectations; emphasis on reproducible, well-documented experimental workflows.</li>
+              <li>Familiarity with cGMP, ICH-GCP, and GLP expectations; emphasis on reproducible, well-documented experimental design and execution.</li>
             </ul>
           </div>
         </div>
@@ -907,7 +885,7 @@
                   src="08.png"
                   alt="Phenotypic response"
                   class="gallery-img"
-                  style="object-position: 50% 70%;"
+                  style="object-position: 50% 60%;"
                 />
               </div>
               <div class="gallery-caption">
@@ -950,7 +928,7 @@
                   src="02.png"
                   alt="Phenotypic response"
                   class="gallery-img"
-                  style="object-position: 50% 35%;"
+                  style="object-position: 50% 30%;"
                 />
               </div>
               <div class="gallery-caption">
@@ -1026,11 +1004,12 @@
         <div class="section-body">
           <ul class="pub-list">
             <li>
-              <strong><u>Liu, T.-H.</u></strong>*, Lyu, K.*, Zhao, J. C., Dang, X., Wang, X., &amp; Ji, J.-Y. Development of potent and selective PROTAC degraders
-              targeting transcriptional CDKs. <em>(Manuscript in preparation).</em>
+              <strong><u>Liu, T.-H.</u></strong>, Lyu, K., Zhao, J. C., Dang, X., Wang, X., &amp; Ji, J.-Y.
+              Development of potent and selective PROTAC degraders targeting transcriptional CDKs.
+              <em>(Manuscript in preparation).</em>
             </li>
             <li>
-              <strong><u>Liu, T.-H.</u></strong>*, Li, X.*, Hsu, F*. N., Sun, J., Niu, Y., Xing, Y., Liu, M., Liu, Y., Hemba-Waduge, R. U., Ni, J.-Q., &amp; Ji, J.-Y.
+              <strong><u>Liu, T.-H.</u></strong>, Li, X., Hsu, F. N., Sun, J., Niu, Y., Xing, Y., Liu, M., Liu, Y., Hemba-Waduge, R. U., Ni, J.-Q., &amp; Ji, J.-Y.
               Asymmetric interdependency among the four subunits of the CDK8 module. <em>(Manuscript in preparation).</em>
             </li>
             <li>
@@ -1038,7 +1017,7 @@
               Distinct effects of CDK8 module subunits on cellular growth and proliferation in <em>Drosophila</em>. <em>Development</em>, 2024.
             </li>
             <li>
-              Liu, M.*, Hemba-Waduge, R. U.*, Li, X., Huang, X., <strong><u>Liu, T.-H.</u></strong>, Han, X., Wang, Y., &amp; Ji, J.-Y.
+              Liu, M., Hemba-Waduge, R. U., Li, X., Huang, X., <strong><u>Liu, T.-H.</u></strong>, Han, X., Wang, Y., &amp; Ji, J.-Y.
               Wnt/Wingless signaling promotes lipid mobilization through transcriptional repression. <em>PNAS</em>, 2024.
             </li>
             <li>
@@ -1046,36 +1025,15 @@
               Cdk8 attenuates lipogenesis by inhibiting SREBP-dependent transcription in <em>Drosophila</em>. <em>Disease Models &amp; Mechanisms</em>, 2022.
             </li>
             <li>
-              <strong>Provisional patent (in preparation):</strong> Selective PROTAC degraders targeting transcriptional CDKs and their use in cancer therapy.
-              <strong><u>Liu, T.-H.</u></strong>*, Lyu, K.*, Wang, X., Ji, J.-Y., et al.
+              <strong>Provisional patent (in preparation):</strong>
+              Selective PROTAC degraders targeting transcriptional CDKs and their use in cancer therapy.
+              <strong><u>Liu, T.-H.</u></strong>, Lyu, K., Wang, X., Ji, J.-Y., et al.
             </li>
           </ul>
         </div>
       </section>
 
-      <!-- Contact：照你的要求不動內容結構 -->
-      <section class="section" id="contact">
-        <div class="section-header">
-          <div class="section-title">Contact</div>
-          <div class="section-kicker">Let’s Connect</div>
-        </div>
-        <div class="section-body">
-          <p>
-            I am actively exploring Scientist and Postdoctoral Research Associate opportunities in translational oncology,
-            protein degradation, and small-molecule drug discovery.
-          </p>
-          <div class="pill-row">
-            <div class="pill">Location: USA</div>
-            <div class="pill">Open to relocation</div>
-            <div class="pill">Translational oncology</div>
-            <div class="pill">Degrader discovery</div>
-          </div>
-          <p style="margin-top: 8px;">
-            <strong>Email:</strong> <a href="mailto:tzuhao.steven.liu@gmail.com">tzuhao.steven.liu@gmail.com</a><br />
-            <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tzu-hao-liu" target="_blank" rel="noreferrer">www.linkedin.com/in/tzu-hao-liu</a>
-          </p>
-        </div>
-      </section>
+      <!-- Contact section removed as requested -->
     </main>
 
     <footer>
