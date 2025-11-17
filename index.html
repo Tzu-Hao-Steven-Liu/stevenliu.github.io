@@ -44,16 +44,13 @@
       padding: 20px 16px 40px;
     }
 
-    header {
+    /* 這裡把 sticky 效果移到 nav 本身 */
+    .nav {
       position: sticky;
       top: 0;
       z-index: 20;
       backdrop-filter: blur(18px);
       background: linear-gradient(to bottom, rgba(0,0,0,0.96), rgba(0,0,0,0.86), transparent);
-      margin-bottom: 16px;
-    }
-
-    .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -124,12 +121,17 @@
       width: 100%;
     }
 
+    /* hero-section 把 nav + hero 包在一起 */
+    .hero-section {
+      margin-bottom: 28px;
+    }
+
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
       gap: 26px;
       margin-top: 18px;
-      margin-bottom: 28px;
+      margin-bottom: 0;
       align-items: center;
     }
 
@@ -587,84 +589,85 @@
 </head>
 <body>
   <div class="page">
-    <header>
-      <div class="nav">
-        <div class="nav-left">
-          <div class="logo-circle">SL</div>
-          <div>
-            <div class="nav-title">Steven Liu</div>
-            <div class="nav-subtitle">Translational Oncology · Small Molecule Drug Discovery</div>
-          </div>
-        </div>
-        <nav class="nav-links">
-          <a href="#about">About</a>
-          <a href="#education">Education</a>
-          <a href="#experience">Experience</a>
-          <a href="#work">My Work</a>
-          <a href="#skills">Skills</a>
-          <a href="#publications">Publications</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </header>
-
     <main>
-      <section class="hero" id="top">
-        <div class="hero-right">
-          <div class="hero-card">
-            <div class="badge-floating">Available · Jan. 5th 2026</div>
-            <div class="profile-img-wrap">
-              <img src="Salon Picture.jpg" alt="Portrait of Steven Liu" class="profile-img" />
-            </div>
-            <div class="hero-role">Ph.D. · Biomedical Sciences</div>
-            <div class="hero-name">Tzu-Hao "Steven" Liu</div>
-            <div class="hero-highlight">
-              Translational oncology scientist specializing in transcriptional CDKs, PROTAC-style degraders, and data-driven therapeutic discovery.
-            </div>
-            <div class="hero-mini-grid">
-              <div class="mini-card">
-                <div class="mini-label">Current</div>
-                <div class="mini-value">Doctoral Candidate Research Associate at Tulane University School of Medicine</div>
-              </div>
-              <div class="mini-card">
-                <div class="mini-label">Target Roles</div>
-                <div class="mini-value">Research Scientist / Senior Research Associate</div>
-              </div>
+      <!-- 合併後的 top section：nav + hero -->
+      <section class="hero-section" id="top">
+        <div class="nav">
+          <div class="nav-left">
+            <div class="logo-circle">SL</div>
+            <div>
+              <div class="nav-title">Steven Liu</div>
+              <div class="nav-subtitle">Translational Oncology · Small Molecule Drug Discovery</div>
             </div>
           </div>
+          <nav class="nav-links">
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#experience">Experience</a>
+            <a href="#work">My Work</a>
+            <a href="#skills">Skills</a>
+            <a href="#publications">Publications</a>
+            <a href="#contact">Contact</a>
+          </nav>
         </div>
 
-        <div class="hero-left">
-          <div class="hero-pill">
-            <span class="hero-pill-dot"></span>
-            Seeking Research Scientist / Senior Research Associate roles in oncology & small-molecule drug discovery
-          </div>
-          <h1 class="hero-title">
-            Designing degrader-based therapies at the interface of cancer biology and data science.
-          </h1>
-          <p class="hero-tagline">
-            Ph.D. in Biomedical Sciences with 5+ years of translational oncology and cell-based pharmacology experience, seeking Research Scientist roles advancing targeted protein degraders and cancer therapeutics.
-          </p>
-          <div class="hero-grid">
-            <div class="hero-chip">Transcriptional CDKs</div>
-            <div class="hero-chip">PROTAC degraders</div>
-            <div class="hero-chip">Cell-based assays</div>
-            <div class="hero-chip">Antibody-based assays</div>
-            <div class="hero-chip">Bioinfo. analysis</div>
-            <div class="hero-chip">Biochemical assays</div>
-          </div>
-
-          <div class="hero-contact">
-            <span><strong>Mobile:</strong> +1-979-213-2157</span>
-            <span>·</span>
-            <span><strong>Email:</strong> <a href="mailto:tzuhao.steven.liu@gmail.com">tzuhao.steven.liu@gmail.com</a></span>
-            <span>·</span>
-            <span><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tzu-hao-liu" target="_blank" rel="noreferrer">Steven Liu</a></span>
+        <div class="hero">
+          <div class="hero-right">
+            <div class="hero-card">
+              <div class="badge-floating">Available · Jan. 5th 2026</div>
+              <div class="profile-img-wrap">
+                <img src="Salon Picture.jpg" alt="Portrait of Steven Liu" class="profile-img" />
+              </div>
+              <div class="hero-role">Ph.D. · Biomedical Sciences</div>
+              <div class="hero-name">Tzu-Hao "Steven" Liu</div>
+              <div class="hero-highlight">
+                Translational oncology scientist specializing in transcriptional CDKs, PROTAC-style degraders, and data-driven therapeutic discovery.
+              </div>
+              <div class="hero-mini-grid">
+                <div class="mini-card">
+                  <div class="mini-label">Current</div>
+                  <div class="mini-value">Doctoral Candidate Research Associate at Tulane University School of Medicine</div>
+                </div>
+                <div class="mini-card">
+                  <div class="mini-label">Target Roles</div>
+                  <div class="mini-value">Research Scientist / Senior Research Associate</div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="hero-buttons">
-            <a class="btn-primary" href="#work">View my work ↓</a>
-            <a class="btn-ghost" href="Portfolio_Steven_Liu-3.pdf" target="_blank" rel="noreferrer">Download portfolio PDF</a>
+          <div class="hero-left">
+            <div class="hero-pill">
+              <span class="hero-pill-dot"></span>
+              Seeking Research Scientist / Senior Research Associate roles in oncology & small-molecule drug discovery
+            </div>
+            <h1 class="hero-title">
+              Designing degrader-based therapies at the interface of cancer biology and data science.
+            </h1>
+            <p class="hero-tagline">
+              Ph.D. in Biomedical Sciences with 5+ years of translational oncology and cell-based pharmacology experience, seeking Research Scientist roles advancing targeted protein degraders and cancer therapeutics.
+            </p>
+            <div class="hero-grid">
+              <div class="hero-chip">Transcriptional CDKs</div>
+              <div class="hero-chip">PROTAC degraders</div>
+              <div class="hero-chip">Cell-based assays</div>
+              <div class="hero-chip">Antibody-based assays</div>
+              <div class="hero-chip">Bioinfo. analysis</div>
+              <div class="hero-chip">Biochemical assays</div>
+            </div>
+
+            <div class="hero-contact">
+              <span><strong>Mobile:</strong> +1-979-213-2157</span>
+              <span>·</span>
+              <span><strong>Email:</strong> <a href="mailto:tzuhao.steven.liu@gmail.com">tzuhao.steven.liu@gmail.com</a></span>
+              <span>·</span>
+              <span><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tzu-hao-liu" target="_blank" rel="noreferrer">Steven Liu</a></span>
+            </div>
+
+            <div class="hero-buttons">
+              <a class="btn-primary" href="#work">View my work ↓</a>
+              <a class="btn-ghost" href="Portfolio_Steven_Liu-3.pdf" target="_blank" rel="noreferrer">Download portfolio PDF</a>
+            </div>
           </div>
         </div>
       </section>
