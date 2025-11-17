@@ -12,13 +12,13 @@
     :root {
       --bg: #020617;
       --bg-alt: #020617;
-      --card: #0b1120;
+      --card: #0f172a;
       --accent: #38bdf8;
-      --accent-soft: rgba(56,189,248,0.12);
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --border: #1f2937;
-      --shadow-soft: 0 18px 60px rgba(15,23,42,0.75);
+      --accent-soft: rgba(56,189,248,0.18);
+      --text: #f9fafb;
+      --muted: #cbd5f5;
+      --border: #1e293b;
+      --shadow-soft: 0 18px 60px rgba(15,23,42,0.85);
       --radius-lg: 18px;
       --radius-xl: 26px;
       --transition-fast: 180ms ease-out;
@@ -28,10 +28,11 @@
 
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: radial-gradient(circle at top, #0b1120 0, #020617 55%, #000 100%);
+      background: radial-gradient(circle at top, #0f172a 0, #020617 60%, #020617 100%);
       color: var(--text);
       line-height: 1.6;
       min-height: 100vh;
+      font-size: 15px;
     }
 
     a { color: var(--accent); text-decoration: none; }
@@ -48,7 +49,7 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(18px);
-      background: linear-gradient(to bottom, rgba(15,23,42,0.97), rgba(15,23,42,0.85), transparent);
+      background: linear-gradient(to bottom, rgba(15,23,42,0.94), rgba(15,23,42,0.82), transparent);
       margin-bottom: 16px;
     }
 
@@ -57,7 +58,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 12px 0 10px;
-      border-bottom: 1px solid rgba(148,163,184,0.25);
+      border-bottom: 1px solid rgba(148,163,184,0.35);
     }
 
     .nav-left {
@@ -77,24 +78,24 @@
       font-weight: 700;
       font-size: 15px;
       color: #e5f4ff;
-      box-shadow: 0 10px 30px rgba(56,189,248,0.6);
+      box-shadow: 0 10px 30px rgba(56,189,248,0.4);
     }
 
     .nav-title {
       font-weight: 600;
       letter-spacing: 0.03em;
-      font-size: 15px;
+      font-size: 16px;
     }
 
     .nav-subtitle {
-      font-size: 11px;
+      font-size: 12px;
       color: var(--muted);
     }
 
     .nav-links {
       display: flex;
       gap: 14px;
-      font-size: 13px;
+      font-size: 14px;
     }
 
     .nav-links a {
@@ -133,11 +134,12 @@
     }
 
     .hero-left {
-      background: radial-gradient(circle at top left, rgba(56,189,248,0.06), transparent 56%),
-                  radial-gradient(circle at bottom right, rgba(129,140,248,0.08), transparent 50%);
+      background:
+        radial-gradient(circle at top left, rgba(56,189,248,0.04), transparent 56%),
+        radial-gradient(circle at bottom right, rgba(129,140,248,0.06), transparent 50%);
       border-radius: var(--radius-xl);
       padding: 22px 22px 20px;
-      border: 1px solid rgba(148,163,184,0.28);
+      border: 1px solid rgba(148,163,184,0.32);
       box-shadow: var(--shadow-soft);
       position: relative;
       overflow: hidden;
@@ -149,7 +151,7 @@
       gap: 8px;
       padding: 3px 9px 3px 4px;
       border-radius: 999px;
-      background: rgba(15,23,42,0.92);
+      background: rgba(15,23,42,0.96);
       border: 1px solid rgba(56,189,248,0.7);
       font-size: 11px;
       color: var(--muted);
@@ -161,11 +163,11 @@
       height: 9px;
       border-radius: 999px;
       background: radial-gradient(circle at 30% 30%, #bbf7d0 0, #22c55e 40%, #166534 100%);
-      box-shadow: 0 0 14px rgba(74,222,128,0.85);
+      box-shadow: 0 0 12px rgba(74,222,128,0.8);
     }
 
     .hero-title {
-      font-size: 26px;
+      font-size: 28px;
       line-height: 1.25;
       margin-bottom: 8px;
     }
@@ -177,7 +179,7 @@
     }
 
     .hero-tagline {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--muted);
       max-width: 520px;
       margin-bottom: 16px;
@@ -185,20 +187,22 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 10px;
       margin-bottom: 14px;
     }
 
     .hero-chip {
-      font-size: 11px;
+      font-size: 12px;
       padding: 7px 8px;
       border-radius: 999px;
       border: 1px solid rgba(148,163,184,0.45);
       background: rgba(15,23,42,0.9);
       color: #e5e7eb;
       text-align: center;
-      white-space: nowrap;
+      white-space: normal;
+      word-break: break-word;
+      line-height: 1.3;
     }
 
     .hero-contact {
@@ -207,7 +211,7 @@
       gap: 10px;
       align-items: center;
       margin-top: 4px;
-      font-size: 12px;
+      font-size: 13px;
       color: var(--muted);
     }
 
@@ -223,7 +227,7 @@
     .btn-primary, .btn-ghost {
       border-radius: 999px;
       padding: 7px 14px;
-      font-size: 12px;
+      font-size: 13px;
       border: 1px solid transparent;
       cursor: pointer;
       display: inline-flex;
@@ -235,19 +239,19 @@
 
     .btn-primary {
       background: linear-gradient(to right, #38bdf8, #6366f1);
-      color: #0b1120;
+      color: #020617;
       font-weight: 600;
-      box-shadow: 0 16px 36px rgba(56,189,248,0.5);
+      box-shadow: 0 16px 36px rgba(56,189,248,0.45);
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 20px 46px rgba(56,189,248,0.65);
+      box-shadow: 0 20px 46px rgba(56,189,248,0.6);
     }
 
     .btn-ghost {
-      background: rgba(15,23,42,0.9);
-      border-color: rgba(148,163,184,0.55);
+      background: rgba(15,23,42,0.92);
+      border-color: rgba(148,163,184,0.6);
       color: var(--muted);
     }
 
@@ -265,8 +269,8 @@
     .hero-card {
       border-radius: var(--radius-xl);
       padding: 14px 14px 16px;
-      background: radial-gradient(circle at top, rgba(56,189,248,0.16), rgba(15,23,42,0.96) 46%, #020617 100%);
-      border: 1px solid rgba(148,163,184,0.4);
+      background: radial-gradient(circle at top, rgba(56,189,248,0.12), rgba(15,23,42,0.96) 46%, #020617 100%);
+      border: 1px solid rgba(148,163,184,0.45);
       box-shadow: 0 22px 50px rgba(15,23,42,0.95);
       position: relative;
       overflow: hidden;
@@ -291,23 +295,23 @@
     }
 
     .hero-role {
-      font-size: 12px;
+      font-size: 13px;
       color: var(--muted);
       margin-bottom: 2px;
     }
 
     .hero-name {
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 600;
       margin-bottom: 8px;
     }
 
     .hero-highlight {
-      font-size: 12px;
+      font-size: 13px;
       border-radius: 12px;
       padding: 6px 8px;
-      background: rgba(15,23,42,0.9);
-      border: 1px solid rgba(148,163,184,0.45);
+      background: rgba(15,23,42,0.95);
+      border: 1px solid rgba(148,163,184,0.5);
       margin-bottom: 10px;
     }
 
@@ -315,11 +319,11 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 8px;
-      font-size: 11px;
+      font-size: 12px;
     }
 
     .mini-card {
-      background: rgba(15,23,42,0.92);
+      background: rgba(15,23,42,0.95);
       border-radius: 12px;
       padding: 7px 8px;
       border: 1px solid rgba(30,64,175,0.8);
@@ -327,24 +331,24 @@
 
     .mini-label {
       text-transform: uppercase;
-      font-size: 10px;
+      font-size: 11px;
       color: var(--muted);
       margin-bottom: 2px;
       letter-spacing: 0.08em;
     }
 
     .mini-value {
-      font-size: 11px;
+      font-size: 12px;
     }
 
     .badge-floating {
       position: absolute;
       right: 10px;
       top: 10px;
-      font-size: 11px;
+      font-size: 12px;
       padding: 5px 7px;
       border-radius: 999px;
-      background: rgba(15,23,42,0.96);
+      background: rgba(15,23,42,0.98);
       border: 1px solid rgba(129,140,248,0.9);
     }
 
@@ -352,11 +356,12 @@
       margin-bottom: 26px;
       border-radius: var(--radius-lg);
       padding: 18px 18px 16px;
-      background: radial-gradient(circle at top left, rgba(56,189,248,0.06), transparent 58%),
-                  radial-gradient(circle at bottom right, rgba(56,189,248,0.04), transparent 52%),
-                  rgba(15,23,42,0.96);
-      border: 1px solid rgba(30,64,175,0.65);
-      box-shadow: 0 18px 42px rgba(15,23,42,0.85);
+      background:
+        radial-gradient(circle at top left, rgba(56,189,248,0.04), transparent 58%),
+        radial-gradient(circle at bottom right, rgba(56,189,248,0.03), transparent 52%),
+        rgba(15,23,42,0.98);
+      border: 1px solid rgba(30,64,175,0.7);
+      box-shadow: 0 18px 42px rgba(15,23,42,0.9);
     }
 
     .section-header {
@@ -368,7 +373,7 @@
     }
 
     .section-title {
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 600;
     }
 
@@ -380,7 +385,7 @@
     }
 
     .section-body {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--muted);
     }
 
@@ -392,15 +397,15 @@
     }
 
     .item {
-      background: rgba(15,23,42,0.95);
+      background: var(--card);
       border-radius: 14px;
       padding: 10px 11px;
       border: 1px solid rgba(30,64,175,0.8);
-      font-size: 12px;
+      font-size: 13px;
     }
 
     .item-label {
-      font-size: 11px;
+      font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--muted);
@@ -414,7 +419,7 @@
     }
 
     .item-sub {
-      font-size: 11px;
+      font-size: 12px;
       color: var(--muted);
     }
 
@@ -426,12 +431,13 @@
     }
 
     .pill {
-      font-size: 11px;
+      font-size: 12px;
       padding: 4px 8px;
       border-radius: 999px;
-      background: rgba(15,23,42,0.9);
+      background: rgba(15,23,42,0.95);
       border: 1px solid rgba(148,163,184,0.6);
       white-space: nowrap;
+      color: var(--muted);
     }
 
     .cards-grid-3 {
@@ -439,14 +445,14 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 10px;
       margin-top: 8px;
-      font-size: 12px;
+      font-size: 13px;
     }
 
     .card {
-      background: rgba(15,23,42,0.95);
+      background: var(--card);
       border-radius: 14px;
       padding: 10px 11px;
-      border: 1px solid rgba(30,64,175,0.8);
+      border: 1px solid rgba(30,64,175,0.85);
     }
 
     .card-title {
@@ -469,13 +475,14 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
       margin-top: 8px;
-      font-size: 12px;
+      font-size: 13px;
     }
 
     .skills-title {
       font-weight: 600;
       margin-bottom: 4px;
       color: var(--text);
+      font-size: 14px;
     }
 
     .skills-list {
@@ -492,11 +499,11 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 10px;
       margin-top: 10px;
-      font-size: 11px;
+      font-size: 12px;
     }
 
     .gallery-card {
-      background: rgba(15,23,42,0.95);
+      background: var(--card);
       border-radius: 14px;
       border: 1px solid rgba(56,189,248,0.55);
       overflow: hidden;
@@ -505,7 +512,7 @@
     .gallery-img-wrap {
       width: 100%;
       aspect-ratio: 4 / 3;
-      background: radial-gradient(circle at top, #1e293b, #020617 60%);
+      background: radial-gradient(circle at top, #1e293b, #020617 70%);
     }
 
     .gallery-img {
@@ -517,7 +524,7 @@
 
     .gallery-caption {
       padding: 7px 8px 8px;
-      border-top: 1px solid rgba(30,64,175,0.8);
+      border-top: 1px solid rgba(30,64,175,0.85);
     }
 
     .gallery-caption-title {
@@ -527,7 +534,7 @@
     }
 
     .pub-list {
-      font-size: 12px;
+      font-size: 13px;
       margin-top: 6px;
       display: grid;
       gap: 5px;
@@ -539,7 +546,7 @@
 
     footer {
       margin-top: 20px;
-      font-size: 11px;
+      font-size: 12px;
       color: var(--muted);
       text-align: center;
       padding-top: 12px;
@@ -564,7 +571,7 @@
     @media (max-width: 640px) {
       .page { padding: 16px 12px 30px; }
       .hero-left, .section { padding: 16px 13px 13px; }
-      .hero-title { font-size: 22px; }
+      .hero-title { font-size: 24px; }
       .cards-grid-3, .gallery, .skills-grid, .two-col {
         grid-template-columns: minmax(0, 1fr);
       }
@@ -662,16 +669,16 @@
         </div>
         <div class="section-body">
           <p>
-      I am a translational oncology scientist focused on transcriptional CDKs, NF-κB–related inflammatory signaling, and
-      cytokine-driven pathways in human cancer models. I design and execute mechanistic, cell-based pharmacology studies using
-      multi-parameter flow cytometry, Incucyte-based live-cell imaging, and CRISPR/RNAi perturbations to quantify viability,
-      proliferation, cytotoxicity, apoptosis, and pathway activation under small-molecule inhibitor and degrader treatment.
+            I am a translational oncology scientist focused on transcriptional CDKs, NF-κB–related inflammatory signaling, and
+            cytokine-driven pathways in human cancer models. I design and execute mechanistic, cell-based pharmacology studies using
+            multi-parameter flow cytometry, Incucyte-based live-cell imaging, and CRISPR/RNAi perturbations to quantify viability,
+            proliferation, cytotoxicity, apoptosis, and pathway activation under small-molecule inhibitor and degrader treatment.
           </p>
-        <p style="margin-top: 8px;">
-      Beyond generating data, I enjoy building robust assay workflows and analysis pipelines in R and Python to link exposure–response
-      relationships, pathway biology, and omics readouts to clear hypotheses and next-step experiments. I’m comfortable operating in
-      cross-functional, fast-paced discovery teams and translating complex datasets into decision-ready insights for novel cancer
-      therapeutics, including advanced modalities such as targeted protein degraders.
+          <p style="margin-top: 8px;">
+            Beyond generating data, I enjoy building robust assay workflows and analysis pipelines in R and Python to link exposure–response
+            relationships, pathway biology, and omics readouts to clear hypotheses and next-step experiments. I’m comfortable operating in
+            cross-functional, fast-paced discovery teams and translating complex datasets into decision-ready insights for novel cancer
+            therapeutics, including advanced modalities such as targeted protein degraders.
           </p>
         </div>
       </section>
@@ -688,7 +695,7 @@
             <div class="item-sub">Tulane University School of Medicine</div>
           </div>
           <div class="item">
-            <div class="item-label">M.S. & B.S.</div>
+            <div class="item-label">M.S. &amp; B.S.</div>
             <div class="item-main">Biochemical Science and Technology</div>
             <div class="item-sub">National Taiwan University · M.S. 2018 · B.S. 2016</div>
           </div>
@@ -708,7 +715,7 @@
           </div>
           <div class="item">
             <div class="item-label">2016 – 2020</div>
-            <div class="item-main">Graduate Research & Teaching Assistant · Research Assistant</div>
+            <div class="item-main">Graduate Research &amp; Teaching Assistant · Research Assistant</div>
             <div class="item-sub">
               National Taiwan University · Chang Gung University
             </div>
@@ -729,16 +736,16 @@
               <div class="card-title">Target Validation</div>
               <ul>
                 <li>
-                Phospho-specific and quantitative immunoblotting plus qPCR and ELISA to confirm on-target modulation of transcriptional CDKs,
-                NF-κB, and cytokine-related signaling at both protein and mRNA levels.
+                  Phospho-specific and quantitative immunoblotting plus qPCR and ELISA to confirm on-target modulation of transcriptional CDKs,
+                  NF-κB, and cytokine-related signaling at both protein and mRNA levels.
                 </li>
                 <li>
-                HPG protein synthesis and related metabolic assays to measure how target perturbation rewires biosynthetic activity and cellular
-                fitness in tumor and immune-relevant models.
+                  HPG protein synthesis and related metabolic assays to measure how target perturbation rewires biosynthetic activity and cellular
+                  fitness in tumor and immune-relevant models.
                 </li>
                 <li>
-                Immunostaining and proximity ligation assays to profile protein interaction, pathway activation, and immune-relevant responses
-                that link target engagement to functional phenotypes.
+                  Immunostaining and proximity ligation assays to profile protein interaction, pathway activation, and immune-relevant responses
+                  that link target engagement to functional phenotypes.
                 </li>
               </ul>
             </div>
@@ -746,16 +753,16 @@
               <div class="card-title">Preclinical Candidate Evaluation</div>
               <ul>
                 <li>
-                Design and execute cell-based screening campaigns and dose- and time-course studies across prostate, breast, leukemia,
-                and immune-relevant models to profile panels of small-molecule inhibitors and degraders.
+                  Design and execute cell-based screening campaigns and dose- and time-course studies across prostate, breast, leukemia,
+                  and immune-relevant models to profile panels of small-molecule inhibitors and degraders.
                 </li>
                 <li>
-                Quantify viability, proliferation, cytotoxicity, and apoptosis using multi-parameter flow cytometry, live-cell imaging
-                (e.g., Incucyte), and plate-based assays to support hit triage, lead ranking, and risk assessment.
+                  Quantify viability, proliferation, cytotoxicity, and apoptosis using multi-parameter flow cytometry, live-cell imaging
+                  (e.g., Incucyte), and plate-based assays to support hit triage, lead ranking, and risk assessment.
                 </li>
                 <li>
-                Fit EC<sub>50</sub>, IC<sub>50</sub>, and DC<sub>50</sub> curves and integrate basic exposure–response/PK/PD analysis
-                to compare potency, selectivity, and liabilities, informing prioritization of preclinical candidates.
+                  Fit EC<sub>50</sub>, IC<sub>50</sub>, and DC<sub>50</sub> curves and integrate basic exposure–response/PK/PD analysis
+                  to compare potency, selectivity, and liabilities, informing prioritization of preclinical candidates.
                 </li>
               </ul>
             </div>
@@ -763,16 +770,16 @@
               <div class="card-title">Translational Oncology</div>
               <ul>
                 <li>
-                Plan and interpret RNA-seq and quantitative proteomics to define treatment-induced pathway and gene-expression signatures
-                in cancer and inflammatory models.
+                  Plan and interpret RNA-seq and quantitative proteomics to define treatment-induced pathway and gene-expression signatures
+                  in cancer and inflammatory models.
                 </li>
                 <li>
-                Integrate <em>in vitro</em> pharmacology data with public tumor and survival datasets to generate target, indication, and biomarker
-                hypotheses that support portfolio and indication strategy.
+                  Integrate <em>in vitro</em> pharmacology data with public tumor and survival datasets to generate target, indication, and biomarker
+                  hypotheses that support portfolio and indication strategy.
                 </li>
                 <li>
-                Select disease-relevant <em>in vitro</em> models and pharmacodynamic readouts aligned with transcriptional CDK, NF-κB, and
-                cytokine biology to connect mechanistic findings to preclinical design and life-cycle management questions.
+                  Select disease-relevant <em>in vitro</em> models and pharmacodynamic readouts aligned with transcriptional CDK, NF-κB, and
+                  cytokine biology to connect mechanistic findings to preclinical design and life-cycle management questions.
                 </li>
               </ul>
             </div>
@@ -782,13 +789,13 @@
 
       <section class="section" id="skills">
         <div class="section-header">
-          <div class="section-title">Technical Skills & Methods</div>
+          <div class="section-title">Technical Skills &amp; Methods</div>
           <div class="section-kicker">Core Toolkit</div>
         </div>
         <div class="skills-grid">
           <!-- Gene Editing & Functional Genomics -->
           <div class="item">
-            <div class="skills-title">Gene Editing & Functional Genomics</div>
+            <div class="skills-title">Gene Editing &amp; Functional Genomics</div>
             <ul class="skills-list">
               <li>CRISPR KO/KI and screening workflows in human cancer cell models.</li>
               <li>RNAi (shRNA/siRNA) and lentiviral transduction for target perturbation.</li>
@@ -797,7 +804,7 @@
 
           <!-- Mammalian Cell Culture & Cell-Based Pharmacology -->
           <div class="item">
-            <div class="skills-title">Mammalian Cell Culture & Cell-Based Pharmacology</div>
+            <div class="skills-title">Mammalian Cell Culture &amp; Cell-Based Pharmacology</div>
             <ul class="skills-list">
               <li>Routine culture of human cancer and immune-relevant cell lines (e.g., LNCaP, 293T, THP-1) with seeding, passaging, and routine mycoplasma testing, including cryopreservation.</li>
               <li>Cell viability, proliferation, cytotoxicity, cell-cycle, and apoptosis assays to characterize panels of inhibitors and degraders.</li>
@@ -817,7 +824,7 @@
 
           <!-- Protein & Antibody-Based Assays -->
           <div class="item">
-            <div class="skills-title">Protein & Antibody-Based Assays</div>
+            <div class="skills-title">Protein &amp; Antibody-Based Assays</div>
             <ul class="skills-list">
               <li>Protein gel electrophoresis, quantitative and phospho-specific immunoblotting for signaling and target-engagement analysis.</li>
               <li>Immunoprecipitation / co-immunoprecipitation, ELISA, and cytokine profiling to connect pathway modulation to functional responses.</li>
@@ -827,7 +834,7 @@
 
           <!-- Data Analysis, Biostatistics & Bioinformatics -->
           <div class="item">
-            <div class="skills-title">Data Analysis, Biostatistics & Bioinformatics</div>
+            <div class="skills-title">Data Analysis, Biostatistics &amp; Bioinformatics</div>
             <ul class="skills-list">
               <li>GraphPad Prism, FlowJo, Incucyte analysis software, Image Lab, confocal imaging tools, and LabArchives ELN.</li>
               <li>R and Python on Unix/Linux systems for omics analysis, QC, statistics, and visualization.</li>
@@ -837,20 +844,19 @@
 
           <!-- Project, Models & Compliance -->
           <div class="item">
-            <div class="skills-title">Project, Models & Compliance</div>
+            <div class="skills-title">Project, Models &amp; Compliance</div>
             <ul class="skills-list">
               <li>Cross-functional project coordination and scientific communication with chemistry, bioinformatics, and clinical collaborators.</li>
               <li>Experience with <em>in vivo</em> / <em>ex vivo</em> model systems including <em>Drosophila melanogaster</em> and <em>Mus musculus</em>-based workflows.</li>
               <li>Familiarity with cGMP, ICH-GCP, and GLP expectations; emphasis on reproducible, well-documented experimental workflows.</li>
             </ul>
           </div>
-      </div>
+        </div>
       </section>
-
 
       <section class="section" id="gallery">
         <div class="section-header">
-          <div class="section-title">Data & Figures Gallery</div>
+          <div class="section-title">Data &amp; Figures Gallery</div>
           <div class="section-kicker">Selected Visuals</div>
         </div>
         <div class="section-body">
@@ -861,7 +867,6 @@
           <div class="gallery">
             <div class="gallery-card">
               <div class="gallery-img-wrap">
-                <!-- 將 images/figure-target-validation.png 換成你的圖檔 -->
                 <img src="08.png" alt="Target validation assays" class="gallery-img" />
               </div>
               <div class="gallery-caption">
@@ -883,7 +888,7 @@
                 <img src="06.png" alt="Omics and survival analyses" class="gallery-img" />
               </div>
               <div class="gallery-caption">
-                <div class="gallery-caption-title">Omics & Survival</div>
+                <div class="gallery-caption-title">Omics &amp; Survival</div>
                 <div>RNA-seq, proteomics, and survival analyses guiding indication and biomarker strategy.</div>
               </div>
             </div>
@@ -893,7 +898,7 @@
 
       <section class="section" id="publications">
         <div class="section-header">
-          <div class="section-title">Publications & Patent</div>
+          <div class="section-title">Publications &amp; Patent</div>
           <div class="section-kicker">Selected Outputs</div>
         </div>
         <ul class="pub-list">
