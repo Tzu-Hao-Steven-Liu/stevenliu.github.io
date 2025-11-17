@@ -135,9 +135,7 @@
 
     .hero-card {
       position: relative;
-      max-width: 860px;
       width: 100%;
-      margin: 0 auto;
       border-radius: var(--radius-xl);
       padding: 18px 18px 18px;
       background:
@@ -211,6 +209,16 @@
       border: 1px solid rgba(129,140,248,0.9);
     }
 
+    .hero-availability {
+      position: absolute;
+      right: 10px;
+      top: 44px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: flex-end;
+    }
+
     .hero-pill {
       display: inline-flex;
       align-items: center;
@@ -223,6 +231,7 @@
       color: var(--muted);
       margin-top: 10px;
       margin-bottom: 10px;
+      max-width: 640px;
     }
 
     .hero-pill-dot {
@@ -523,6 +532,12 @@
       .cards-grid-3, .gallery {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+      .hero-availability {
+        position: static;
+        margin-top: 10px;
+        margin-bottom: 4px;
+        justify-content: flex-start;
+      }
     }
 
     @media (max-width: 640px) {
@@ -570,6 +585,17 @@
         <div class="hero-card">
           <div class="badge-floating">Available · Jan. 5th 2026</div>
 
+          <div class="hero-availability">
+            <div class="pill">Location: USA</div>
+            <div class="pill">Open to relocation</div>
+          </div>
+
+          <div class="hero-pill">
+            <span class="hero-pill-dot"></span>
+            I am actively exploring Scientist and Postdoctoral Research Associate opportunities in translational oncology, protein degradation,
+            and small-molecule drug discovery.
+          </div>
+
           <div class="hero-header">
             <div class="profile-img-wrap">
               <img src="Salon Picture.jpg" alt="Portrait of Steven Liu" class="profile-img" />
@@ -583,12 +609,6 @@
             </div>
           </div>
 
-          <div class="hero-pill">
-            <span class="hero-pill-dot"></span>
-            I am actively exploring Scientist and Postdoctoral Research Associate opportunities in translational oncology, protein degradation,
-            and small-molecule drug discovery.
-          </div>
-
           <div class="hero-grid">
             <div class="hero-chip">Transcriptional CDKs</div>
             <div class="hero-chip">PROTAC degraders</div>
@@ -596,11 +616,6 @@
             <div class="hero-chip">Antibody-based assays</div>
             <div class="hero-chip">Bioinformatics analysis</div>
             <div class="hero-chip">Biochemical assays</div>
-          </div>
-
-          <div class="pill-row">
-            <div class="pill">Location: USA</div>
-            <div class="pill">Open to relocation</div>
           </div>
 
           <div class="hero-contact">
