@@ -197,14 +197,16 @@
       max-width: 520px;
     }
 
+    /* 這裡改成正常排版，不再 absolute */
     .hero-availability {
-      position: absolute;
-      right: 10px;
-      top: 10px;
+      position: relative;
+      right: auto;
+      top: auto;
       display: flex;
       flex-direction: column;
       gap: 6px;
       align-items: flex-end;
+      margin-bottom: 6px;
     }
 
     .availability-pill {
@@ -228,7 +230,7 @@
       border: 1px solid var(--border);
       font-size: 12px;
       color: var(--muted);
-      margin-top: 42px; /* 給右上 availability 一點空間 */
+      margin-top: 10px; /* 原本 42，改小讓它往上貼 */
       margin-bottom: 10px;
       max-width: 720px;
     }
