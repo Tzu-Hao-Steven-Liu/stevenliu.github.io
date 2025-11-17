@@ -291,8 +291,11 @@
       height: 100%;
       border-radius: inherit;
       object-fit: cover;
+      /* ⬇ 這行是重點：調整裁切位置 */
+      object-position: 50% 20%;  /* center 20% from top，讓上面多露一點 */
       background: #020617;
     }
+    
 
     .hero-role {
       font-size: 13px;
@@ -633,7 +636,7 @@
             Seeking Research Scientist / Senior Research Associate roles in oncology & small-molecule drug discovery
           </div>
           <h1 class="hero-title">
-            Designing <span>degrader-based</span> therapies at the interface of cancer biology and data science.
+            Designing degrader-based therapies at the interface of cancer biology and data science.
           </h1>
           <p class="hero-tagline">
             Ph.D. candidate in Biomedical Sciences with 5+ years of translational oncology and cell-based pharmacology experience, seeking Research Scientist roles advancing targeted protein degraders and cancer therapeutics.
@@ -865,31 +868,96 @@
             (e.g., immunoblot summaries, RNA-seq volcano plots, UMAPs).
           </p>
           <div class="gallery">
+            <!-- Target Validation (3) -->
             <div class="gallery-card">
               <div class="gallery-img-wrap">
-                <img src="08.png" alt="Target validation assays" class="gallery-img" />
+                <img src="tv1.png" alt="Target validation – CDK8/19 degradation and pathway readouts" class="gallery-img" />
               </div>
               <div class="gallery-caption">
-                <div class="gallery-caption-title">Target Validation</div>
-                <div>Immunoblotting, qPCR, and antibody-based assays confirming specific target engagement.</div>
+                <div class="gallery-caption-title">Target Validation · Figure 1</div>
+                <div>CDK8/19 degrader-induced target loss and downstream pathway modulation.</div>
               </div>
             </div>
+
             <div class="gallery-card">
               <div class="gallery-img-wrap">
-                <img src="01.png" alt="Phenotypic response assays" class="gallery-img" />
+                <img src="tv2.png" alt="Target validation – NF-kB and cytokine signaling modulation" class="gallery-img" />
               </div>
               <div class="gallery-caption">
-                <div class="gallery-caption-title">Phenotypic Response</div>
-                <div>Cell viability, migration, and flow-based assays defining potency and mechanism of action.</div>
+                <div class="gallery-caption-title">Target Validation · Figure 2</div>
+                <div>NF-κB and cytokine-related signaling changes upon small-molecule treatment.</div>
               </div>
             </div>
+
             <div class="gallery-card">
               <div class="gallery-img-wrap">
-                <img src="06.png" alt="Omics and survival analyses" class="gallery-img" />
+                <img src="tv3.png" alt="Target validation – HPG protein synthesis and metabolic response" class="gallery-img" />
               </div>
               <div class="gallery-caption">
-                <div class="gallery-caption-title">Omics &amp; Survival</div>
-                <div>RNA-seq, proteomics, and survival analyses guiding indication and biomarker strategy.</div>
+                <div class="gallery-caption-title">Target Validation · Figure 3</div>
+                <div>HPG protein synthesis assays highlighting metabolic rewiring and cellular fitness.</div>
+              </div>
+            </div>
+
+            <!-- Phenotypic Response (3) -->
+            <div class="gallery-card">
+              <div class="gallery-img-wrap">
+                <img src="pr1.png" alt="Phenotypic response – viability and apoptosis dose–response curves" class="gallery-img" />
+              </div>
+              <div class="gallery-caption">
+                <div class="gallery-caption-title">Phenotypic Response · Figure 1</div>
+                <div>Dose–response viability and apoptosis curves across degrader and inhibitor panels.</div>
+              </div>
+            </div>
+
+            <div class="gallery-card">
+              <div class="gallery-img-wrap">
+                <img src="pr2.png" alt="Phenotypic response – cell-cycle and proliferation profiles" class="gallery-img" />
+              </div>
+              <div class="gallery-caption">
+                <div class="gallery-caption-title">Phenotypic Response · Figure 2</div>
+                <div>Cell-cycle distribution and proliferation changes quantified by flow cytometry.</div>
+              </div>
+            </div>
+
+            <div class="gallery-card">
+              <div class="gallery-img-wrap">
+                <img src="pr3.png" alt="Phenotypic response – migration and Incucyte kinetics" class="gallery-img" />
+              </div>
+              <div class="gallery-caption">
+                <div class="gallery-caption-title">Phenotypic Response · Figure 3</div>
+                <div>Scratch-wound and Incucyte-based kinetic traces of migration and growth.</div>
+              </div>
+            </div>
+
+            <!-- Omics & Survival (3) -->
+            <div class="gallery-card">
+              <div class="gallery-img-wrap">
+                <img src="omics1.png" alt="Omics and survival – RNA-seq volcano plot" class="gallery-img" />
+              </div>
+              <div class="gallery-caption">
+                <div class="gallery-caption-title">Omics &amp; Survival · Figure 1</div>
+                <div>RNA-seq volcano plot summarizing transcriptional responses to degrader treatment.</div>
+              </div>
+            </div>
+
+            <div class="gallery-card">
+              <div class="gallery-img-wrap">
+                <img src="omics2.png" alt="Omics and survival – UMAP clustering of treated vs control samples" class="gallery-img" />
+              </div>
+              <div class="gallery-caption">
+                <div class="gallery-caption-title">Omics &amp; Survival · Figure 2</div>
+                <div>UMAP / clustering separating treated and control samples by pathway signatures.</div>
+              </div>
+            </div>
+
+            <div class="gallery-card">
+              <div class="gallery-img-wrap">
+                <img src="omics3.png" alt="Omics and survival – biomarker-linked survival analysis" class="gallery-img" />
+              </div>
+              <div class="gallery-caption">
+                <div class="gallery-caption-title">Omics &amp; Survival · Figure 3</div>
+                <div>Biomarker-stratified survival curves supporting indication and patient-segmentation hypotheses.</div>
               </div>
             </div>
           </div>
