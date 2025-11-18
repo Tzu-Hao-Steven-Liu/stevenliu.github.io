@@ -166,13 +166,17 @@
       overflow: hidden;
     }
 
-    /* 上排：左邊長 pill + 右邊三個 availability */
+    /* 整個 hero 內容：左邊所有文字 + 照片 / 右邊 availability 泡泡 */
     .hero-top-row {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 10px;
+      gap: 16px;
+    }
+
+    .hero-left-col {
+      flex: 1;
+      min-width: 0;
     }
 
     .hero-pill {
@@ -186,8 +190,8 @@
       font-size: 12px;
       color: var(--muted);
       margin-top: 0;
-      margin-bottom: 0;
-      max-width: 70%;
+      margin-bottom: 6px;
+      max-width: 100%;
     }
 
     .hero-pill-dot {
@@ -228,7 +232,7 @@
       align-items: center;
       gap: 14px;
       margin-bottom: 10px;
-      margin-top: 2px;
+      margin-top: 4px;
     }
 
     .profile-img-wrap {
@@ -284,7 +288,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 10px;
-      margin-top: 10px;
+      margin-top: 8px;
       margin-bottom: 12px;
     }
 
@@ -549,7 +553,7 @@
       .hero-top-row {
         flex-direction: column;
         align-items: flex-start;
-        gap: 8px;
+        gap: 10px;
       }
       .hero-availability {
         align-items: flex-start;
@@ -604,83 +608,82 @@
       <!-- HERO -->
       <section class="hero" id="top">
         <div class="hero-card">
-          <!-- 上排：左側長敘述 pill + 右側三個 availability 泡泡 -->
           <div class="hero-top-row">
-            <div class="hero-pill">
-              <span class="hero-pill-dot"></span>
-              I am actively exploring Scientist and Postdoctoral Research
-              Associate opportunities in translational oncology, protein
-              degradation, and small-molecule drug discovery.
+            <!-- 左邊整欄：pill + 照片 + 文字 + skills + contact + 按鈕 -->
+            <div class="hero-left-col">
+              <div class="hero-pill">
+                <span class="hero-pill-dot"></span>
+                I am actively exploring Scientist and Postdoctoral Research
+                Associate opportunities in translational oncology, protein
+                degradation, and small-molecule drug discovery.
+              </div>
+
+              <div class="hero-header">
+                <div class="profile-img-wrap">
+                  <img
+                    src="Salon Picture.jpg"
+                    alt="Portrait of Steven Liu"
+                    class="profile-img"
+                  />
+                </div>
+                <div class="hero-heading-text">
+                  <div class="hero-role">Ph.D. · Biomedical Sciences</div>
+                  <div class="hero-name">Tzu-Hao "Steven" Liu</div>
+                  <div class="hero-highlight">
+                    Translational oncology scientist specializing in
+                    transcriptional CDKs, PROTAC-style degraders, and
+                    data-driven therapeutic discovery.
+                  </div>
+                </div>
+              </div>
+
+              <div class="hero-grid">
+                <div class="hero-chip">Transcriptional CDKs</div>
+                <div class="hero-chip">PROTAC degraders</div>
+                <div class="hero-chip">Cell-based assays</div>
+                <div class="hero-chip">Antibody-based assays</div>
+                <div class="hero-chip">Bioinfo. analysis</div>
+                <div class="hero-chip">Biochemical assays</div>
+              </div>
+
+              <div class="hero-contact">
+                <span><strong>Mobile:</strong> +1-979-213-2157</span>
+                <span>·</span>
+                <span>
+                  <strong>Email:</strong>
+                  <a href="mailto:tzuhao.steven.liu@gmail.com"
+                    >tzuhao.steven.liu@gmail.com</a
+                  >
+                </span>
+                <span>·</span>
+                <span>
+                  <strong>LinkedIn:</strong>
+                  <a
+                    href="https://www.linkedin.com/in/tzu-hao-liu"
+                    target="_blank"
+                    rel="noreferrer"
+                    >Steven Liu</a
+                  >
+                </span>
+              </div>
+
+              <div class="hero-buttons">
+                <a
+                  class="btn-ghost"
+                  href="Portfolio_Steven_Liu-3.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Download portfolio PDF</a
+                >
+              </div>
             </div>
 
+            <!-- 右邊欄：三個 availability 泡泡 -->
             <div class="hero-availability">
               <div class="availability-pill">Available · Jan. 5th 2026</div>
               <div class="availability-pill">Location: USA</div>
               <div class="availability-pill">Open to relocation</div>
             </div>
-          </div>
-
-          <!-- 名字 + 頭像 -->
-          <div class="hero-header">
-            <div class="profile-img-wrap">
-              <img
-                src="Salon Picture.jpg"
-                alt="Portrait of Steven Liu"
-                class="profile-img"
-              />
-            </div>
-            <div class="hero-heading-text">
-              <div class="hero-role">Ph.D. · Biomedical Sciences</div>
-              <div class="hero-name">Tzu-Hao "Steven" Liu</div>
-              <div class="hero-highlight">
-                Translational oncology scientist specializing in transcriptional
-                CDKs, PROTAC-style degraders, and data-driven therapeutic
-                discovery.
-              </div>
-            </div>
-          </div>
-
-          <!-- 核心技能 chips -->
-          <div class="hero-grid">
-            <div class="hero-chip">Transcriptional CDKs</div>
-            <div class="hero-chip">PROTAC degraders</div>
-            <div class="hero-chip">Cell-based assays</div>
-            <div class="hero-chip">Antibody-based assays</div>
-            <div class="hero-chip">Bioinfo. analysis</div>
-            <div class="hero-chip">Biochemical assays</div>
-          </div>
-
-          <!-- 聯絡資訊 -->
-          <div class="hero-contact">
-            <span><strong>Mobile:</strong> +1-979-213-2157</span>
-            <span>·</span>
-            <span>
-              <strong>Email:</strong>
-              <a href="mailto:tzuhao.steven.liu@gmail.com"
-                >tzuhao.steven.liu@gmail.com</a
-              >
-            </span>
-            <span>·</span>
-            <span>
-              <strong>LinkedIn:</strong>
-              <a
-                href="https://www.linkedin.com/in/tzu-hao-liu"
-                target="_blank"
-                rel="noreferrer"
-                >Steven Liu</a
-              >
-            </span>
-          </div>
-
-          <!-- PDF 按鈕 -->
-          <div class="hero-buttons">
-            <a
-              class="btn-ghost"
-              href="Portfolio_Steven_Liu-3.pdf"
-              target="_blank"
-              rel="noreferrer"
-              >Download portfolio PDF</a
-            >
           </div>
         </div>
       </section>
