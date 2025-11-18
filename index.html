@@ -4,31 +4,42 @@
   <meta charset="UTF-8" />
   <title>Steven Liu | Oncology & Drug Discovery Scientist</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Tzu-Hao (Steven) Liu – Translational Oncology and Small Molecule Drug Discovery." />
+  <meta
+    name="description"
+    content="Portfolio of Tzu-Hao (Steven) Liu – Translational Oncology and Small Molecule Drug Discovery."
+  />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
   <style>
     :root {
       --bg: #000000;
-      --panel-bg: #050811;
-      --bubble-bg: #020617;
-      --card: #050811;
+      --panel-bg: #050505;
+      --card: #050505;
+      --bubble-bg: #000000;
       --accent: #38bdf8;
-      --accent-soft: rgba(56,189,248,0.2);
+      --accent-soft: rgba(56, 189, 248, 0.16);
       --text: #f9fafb;
       --muted: #9ca3af;
-      --border: #1f2937;
-      --shadow-soft: 0 18px 60px rgba(0,0,0,0.9);
+      --border: #262626;
+      --shadow-soft: 0 18px 60px rgba(0, 0, 0, 0.9);
       --radius-lg: 18px;
       --radius-xl: 26px;
       --transition-fast: 180ms ease-out;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+        sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
@@ -36,8 +47,13 @@
       font-size: 15px;
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
 
     .page {
       max-width: 1080px;
@@ -50,7 +66,7 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(18px);
-      background: rgba(0,0,0,0.96);
+      background: rgba(0, 0, 0, 0.96);
       margin-bottom: 16px;
     }
 
@@ -72,14 +88,19 @@
       width: 32px;
       height: 32px;
       border-radius: 999px;
-      background: radial-gradient(circle at 25% 15%, #38bdf8 0, #0ea5e9 36%, #1d4ed8 100%);
+      background: radial-gradient(
+        circle at 25% 15%,
+        #38bdf8 0,
+        #0ea5e9 36%,
+        #1d4ed8 100%
+      );
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
       font-size: 15px;
       color: #e5f4ff;
-      box-shadow: 0 10px 26px rgba(56,189,248,0.45);
+      box-shadow: 0 10px 26px rgba(56, 189, 248, 0.45);
     }
 
     .nav-title {
@@ -141,24 +162,87 @@
       padding: 18px 18px 18px;
       background: var(--panel-bg);
       border: 1px solid var(--border);
-      box-shadow: 0 22px 50px rgba(0,0,0,1);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 1);
       overflow: hidden;
+    }
+
+    /* 上排：左邊長 pill + 右邊三個 availability */
+    .hero-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px 4px 6px;
+      border-radius: 999px;
+      background: var(--bubble-bg);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 0;
+      margin-bottom: 0;
+      max-width: 70%;
+    }
+
+    .hero-pill-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: radial-gradient(
+        circle at 30% 30%,
+        #bbf7d0 0,
+        #22c55e 40%,
+        #166534 100%
+      );
+      box-shadow: 0 0 12px rgba(74, 222, 128, 0.8);
+    }
+
+    .hero-availability {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: flex-end;
+      margin: 0;
+    }
+
+    .availability-pill {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--bubble-bg);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      white-space: nowrap;
+      text-align: right;
     }
 
     .hero-header {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
       margin-bottom: 10px;
+      margin-top: 2px;
     }
 
     .profile-img-wrap {
       width: 110px;
       height: 110px;
       border-radius: 999px;
-      border: 2px solid rgba(148,163,184,0.7);
+      border: 2px solid rgba(148, 163, 184, 0.7);
       padding: 3px;
-      background: radial-gradient(circle at 25% 15%, #38bdf8 0, #020617 60%, #000000 100%);
+      background: radial-gradient(
+        circle at 25% 15%,
+        #38bdf8 0,
+        #020617 60%,
+        #000000 100%
+      );
       flex-shrink: 0;
     }
 
@@ -183,7 +267,7 @@
     }
 
     .hero-name {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 600;
     }
 
@@ -191,65 +275,17 @@
       font-size: 13px;
       border-radius: 12px;
       padding: 6px 8px;
-      background: var(--bubble-bg);
-      border: 1px solid var(--border);
-      margin-top: 4px;
-      max-width: 520px;
-    }
-
-    /* 這裡改成正常排版，不再 absolute */
-    .hero-availability {
-      position: relative;
-      right: auto;
-      top: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      align-items: flex-end;
-      margin-bottom: 6px;
-    }
-
-    .availability-pill {
-      font-size: 12px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: var(--bubble-bg);
+      background: #000000;
       border: 1px solid var(--border);
       color: var(--muted);
-      text-align: right;
-      white-space: nowrap;
-    }
-
-    .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 4px 10px 4px 6px;
-      border-radius: 999px;
-      background: var(--bubble-bg);
-      border: 1px solid var(--border);
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 10px; /* 原本 42，改小讓它往上貼 */
-      margin-bottom: 10px;
-      max-width: 720px;
-    }
-
-    .hero-pill-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, #bbf7d0 0, #22c55e 40%, #166534 100%);
-      box-shadow: 0 0 12px rgba(74,222,128,0.8);
-      flex-shrink: 0;
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 10px;
-      margin-top: 4px;
-      margin-bottom: 10px;
+      margin-top: 10px;
+      margin-bottom: 12px;
     }
 
     .hero-chip {
@@ -257,7 +293,7 @@
       padding: 7px 8px;
       border-radius: 999px;
       border: 1px solid var(--border);
-      background: var(--bubble-bg);
+      background: #000000;
       color: #e5e7eb;
       text-align: center;
       white-space: normal;
@@ -270,12 +306,13 @@
       flex-wrap: wrap;
       gap: 10px;
       align-items: center;
-      margin-top: 4px;
       font-size: 13px;
       color: var(--muted);
     }
 
-    .hero-contact strong { color: var(--text); }
+    .hero-contact strong {
+      color: var(--text);
+    }
 
     .hero-buttons {
       display: flex;
@@ -294,9 +331,11 @@
       align-items: center;
       gap: 6px;
       text-decoration: none;
-      background: var(--bubble-bg);
+      background: #000000;
       color: var(--muted);
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
+      transition: transform var(--transition-fast),
+        box-shadow var(--transition-fast), background var(--transition-fast),
+        border-color var(--transition-fast);
     }
 
     .btn-ghost:hover {
@@ -304,7 +343,7 @@
       border-color: var(--accent);
       color: var(--text);
       transform: translateY(-1px);
-      box-shadow: 0 16px 36px rgba(0,0,0,0.95);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.9);
     }
 
     /* SECTIONS */
@@ -315,7 +354,7 @@
       padding: 18px 18px 16px;
       background: var(--panel-bg);
       border: 1px solid var(--border);
-      box-shadow: 0 18px 42px rgba(0,0,0,0.95);
+      box-shadow: var(--shadow-soft);
     }
 
     .section-header {
@@ -351,7 +390,7 @@
     }
 
     .item {
-      background: var(--panel-bg);
+      background: var(--card);
       border-radius: 14px;
       padding: 10px 11px;
       border: 1px solid var(--border);
@@ -386,7 +425,7 @@
     }
 
     .card {
-      background: var(--panel-bg);
+      background: var(--card);
       border-radius: 14px;
       padding: 10px 11px;
       border: 1px solid var(--border);
@@ -425,13 +464,12 @@
     .skills-list {
       margin-left: 16px;
       list-style: disc;
+      color: var(--muted);
     }
 
     .skills-list li {
       margin-bottom: 3px;
     }
-
-    /* GALLERY */
 
     .gallery {
       display: grid;
@@ -442,17 +480,17 @@
     }
 
     .gallery-card {
-      background: var(--panel-bg);
+      background: var(--card);
       border-radius: 14px;
       border: 1px solid var(--border);
       overflow: hidden;
-      box-shadow: 0 14px 32px rgba(0,0,0,0.9);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.9);
     }
 
     .gallery-img-wrap {
       width: 100%;
       aspect-ratio: 4 / 3;
-      background: #020617;
+      background: #000000;
     }
 
     .gallery-img {
@@ -495,6 +533,8 @@
       border-top: 1px solid var(--border);
     }
 
+    /* RESPONSIVE */
+
     @media (max-width: 840px) {
       .nav-links {
         display: none;
@@ -502,34 +542,34 @@
       .hero-card {
         padding: 16px 14px 16px;
       }
-      .cards-grid-3, .gallery {
+      .cards-grid-3,
+      .gallery {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+      .hero-top-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
       .hero-availability {
-        position: static;
-        margin-top: 0;
-        margin-bottom: 8px;
         align-items: flex-start;
       }
       .availability-pill {
         text-align: left;
       }
-      .hero-pill {
-        margin-top: 10px;
-      }
     }
 
     @media (max-width: 640px) {
-      .page { padding: 16px 12px 30px; }
-      .hero-header {
-        flex-direction: column;
-        align-items: flex-start;
+      .page {
+        padding: 16px 12px 30px;
       }
-      .profile-img-wrap {
-        width: 96px;
-        height: 96px;
+      .section {
+        padding: 16px 13px 13px;
       }
-      .cards-grid-3, .gallery, .skills-grid, .two-col {
+      .two-col,
+      .cards-grid-3,
+      .skills-grid,
+      .gallery {
         grid-template-columns: minmax(0, 1fr);
       }
     }
@@ -543,7 +583,9 @@
           <div class="logo-circle">SL</div>
           <div>
             <div class="nav-title">Steven Liu</div>
-            <div class="nav-subtitle">Translational Oncology · Small Molecule Drug Discovery</div>
+            <div class="nav-subtitle">
+              Translational Oncology · Small Molecule Drug Discovery
+            </div>
           </div>
         </div>
         <nav class="nav-links">
@@ -562,52 +604,83 @@
       <!-- HERO -->
       <section class="hero" id="top">
         <div class="hero-card">
-          <div class="hero-availability">
-            <div class="availability-pill">Available · Jan. 5th 2026</div>
-            <div class="availability-pill">Location: USA</div>
-            <div class="availability-pill">Open to relocation</div>
+          <!-- 上排：左側長敘述 pill + 右側三個 availability 泡泡 -->
+          <div class="hero-top-row">
+            <div class="hero-pill">
+              <span class="hero-pill-dot"></span>
+              I am actively exploring Scientist and Postdoctoral Research
+              Associate opportunities in translational oncology, protein
+              degradation, and small-molecule drug discovery.
+            </div>
+
+            <div class="hero-availability">
+              <div class="availability-pill">Available · Jan. 5th 2026</div>
+              <div class="availability-pill">Location: USA</div>
+              <div class="availability-pill">Open to relocation</div>
+            </div>
           </div>
 
-          <div class="hero-pill">
-            <span class="hero-pill-dot"></span>
-            I am actively exploring Scientist and Postdoctoral Research Associate opportunities in translational oncology, protein degradation,
-            and small-molecule drug discovery.
-          </div>
-
+          <!-- 名字 + 頭像 -->
           <div class="hero-header">
             <div class="profile-img-wrap">
-              <img src="Salon Picture.jpg" alt="Portrait of Steven Liu" class="profile-img" />
+              <img
+                src="Salon Picture.jpg"
+                alt="Portrait of Steven Liu"
+                class="profile-img"
+              />
             </div>
             <div class="hero-heading-text">
               <div class="hero-role">Ph.D. · Biomedical Sciences</div>
               <div class="hero-name">Tzu-Hao "Steven" Liu</div>
               <div class="hero-highlight">
-                Translational oncology scientist specializing in transcriptional CDKs, PROTAC-style degraders, and data-driven therapeutic discovery.
+                Translational oncology scientist specializing in transcriptional
+                CDKs, PROTAC-style degraders, and data-driven therapeutic
+                discovery.
               </div>
             </div>
           </div>
 
+          <!-- 核心技能 chips -->
           <div class="hero-grid">
             <div class="hero-chip">Transcriptional CDKs</div>
             <div class="hero-chip">PROTAC degraders</div>
             <div class="hero-chip">Cell-based assays</div>
             <div class="hero-chip">Antibody-based assays</div>
-            <div class="hero-chip">Bioinformatics analysis</div>
+            <div class="hero-chip">Bioinfo. analysis</div>
             <div class="hero-chip">Biochemical assays</div>
           </div>
 
+          <!-- 聯絡資訊 -->
           <div class="hero-contact">
             <span><strong>Mobile:</strong> +1-979-213-2157</span>
             <span>·</span>
-            <span><strong>Email:</strong> <a href="mailto:tzuhao.steven.liu@gmail.com">tzuhao.steven.liu@gmail.com</a></span>
+            <span>
+              <strong>Email:</strong>
+              <a href="mailto:tzuhao.steven.liu@gmail.com"
+                >tzuhao.steven.liu@gmail.com</a
+              >
+            </span>
             <span>·</span>
-            <span><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tzu-hao-liu" target="_blank" rel="noreferrer">Steven Liu</a></span>
+            <span>
+              <strong>LinkedIn:</strong>
+              <a
+                href="https://www.linkedin.com/in/tzu-hao-liu"
+                target="_blank"
+                rel="noreferrer"
+                >Steven Liu</a
+              >
+            </span>
           </div>
 
+          <!-- PDF 按鈕 -->
           <div class="hero-buttons">
-            <a class="btn-ghost" href="Portfolio_Steven_Liu-3.pdf" target="_blank" rel="noreferrer">
-              Download portfolio PDF
-            </a>
+            <a
+              class="btn-ghost"
+              href="Portfolio_Steven_Liu-3.pdf"
+              target="_blank"
+              rel="noreferrer"
+              >Download portfolio PDF</a
+            >
           </div>
         </div>
       </section>
@@ -620,14 +693,24 @@
         </div>
         <div class="section-body">
           <p>
-            I am a translational oncology scientist focused on transcriptional CDKs, NF-κB–linked inflammatory signaling, and cytokine-driven
-            pathways in human cancer models. My work centers on understanding how targeted protein degraders and kinase modulators rewire
-            signaling and cellular fitness in disease-relevant systems.
+            I am a translational oncology scientist focused on integrating
+            mechanistic biology, quantitative cell-based pharmacology, and
+            data-driven analysis to understand how transcriptional CDKs,
+            NF-κB–linked inflammatory signaling, and cytokine pathways shape
+            tumor behavior. I routinely design and execute high-content
+            experiments using multi-parameter flow cytometry, live-cell imaging,
+            and CRISPR/RNAi perturbations to quantify viability, proliferation,
+            apoptosis, cytotoxicity, and pathway activation under small-molecule
+            inhibitor and degrader treatment.
           </p>
-          <p style="margin-top: 8px;">
-            I enjoy building robust, decision-ready assay workflows and analysis pipelines that connect <em>in vitro</em> pharmacology,
-            pathway biology, and multi-omic readouts to clear hypotheses and next-step experiments. I’m comfortable operating in fast-paced,
-            cross-functional discovery teams and translating complex datasets into actionable insights for novel cancer therapeutics.
+          <p style="margin-top: 8px">
+            I enjoy building robust, reproducible assay workflows and analysis
+            pipelines in R and Python, connecting exposure–response
+            relationships, signaling readouts, and omics data to clear
+            hypotheses and next-step experiments. I’m comfortable operating in
+            cross-functional discovery teams and translating complex datasets
+            into decision-ready insights that support hit triage, lead
+            optimization, and indication strategy for novel cancer therapeutics.
           </p>
         </div>
       </section>
@@ -647,7 +730,9 @@
           <div class="item">
             <div class="item-label">M.S. &amp; B.S.</div>
             <div class="item-main">Biochemical Science and Technology</div>
-            <div class="item-sub">National Taiwan University · M.S. 2018 · B.S. 2016</div>
+            <div class="item-sub">
+              National Taiwan University · M.S. 2018 · B.S. 2016
+            </div>
           </div>
         </div>
       </section>
@@ -661,12 +746,17 @@
         <div class="two-col">
           <div class="item">
             <div class="item-label">2020 – 2025</div>
-            <div class="item-main">Doctoral Candidate Research Associate / Graduate Research Associate</div>
+            <div class="item-main">
+              Doctoral Candidate Research Associate / Graduate Research
+              Associate
+            </div>
             <div class="item-sub">Tulane University School of Medicine</div>
           </div>
           <div class="item">
             <div class="item-label">2016 – 2020</div>
-            <div class="item-main">Graduate Research &amp; Teaching Assistant · Research Assistant</div>
+            <div class="item-main">
+              Graduate Research &amp; Teaching Assistant · Research Assistant
+            </div>
             <div class="item-sub">
               National Taiwan University · Chang Gung University
             </div>
@@ -681,23 +771,31 @@
           <div class="section-kicker">Selected Project</div>
         </div>
         <div class="section-body">
-          <p><strong>Project:</strong> Selective degradation of oncogenic kinases using PROTAC-style small molecules targeting transcriptional CDKs.</p>
+          <p>
+            <strong>Project:</strong> Selective degradation of oncogenic kinases
+            using PROTAC-style small molecules targeting transcriptional CDKs.
+          </p>
 
-          <div class="cards-grid-3" style="margin-top: 12px;">
+          <div class="cards-grid-3" style="margin-top: 12px">
             <div class="card">
               <div class="card-title">Target Validation</div>
               <ul>
                 <li>
-                  Phospho-specific and quantitative immunoblotting plus qPCR and ELISA to confirm on-target modulation of transcriptional CDKs,
-                  NF-κB, and cytokine-related signaling at both protein and mRNA levels.
+                  Phospho-specific and quantitative immunoblotting plus qPCR and
+                  ELISA to confirm on-target modulation of transcriptional CDKs,
+                  NF-κB, and cytokine-related signaling at both protein and mRNA
+                  levels.
                 </li>
                 <li>
-                  HPG protein synthesis and related metabolic assays to measure how target perturbation rewires biosynthetic activity and cellular
-                  fitness in tumor and immune-relevant models.
+                  HPG protein synthesis and related metabolic assays to measure
+                  how target perturbation rewires biosynthetic activity and
+                  cellular fitness in tumor and immune-relevant models.
                 </li>
                 <li>
-                  Immunostaining and proximity ligation assays to profile protein interaction, pathway activation, and immune-relevant responses
-                  that link target engagement to functional phenotypes.
+                  Immunostaining and proximity ligation assays to profile
+                  protein interaction, pathway activation, and immune-relevant
+                  responses that link target engagement to functional
+                  phenotypes.
                 </li>
               </ul>
             </div>
@@ -705,16 +803,22 @@
               <div class="card-title">Preclinical Candidate Evaluation</div>
               <ul>
                 <li>
-                  Design and execute cell-based screening campaigns and dose- and time-course studies across prostate, breast, leukemia,
-                  and immune-relevant models to profile panels of small-molecule inhibitors and degraders.
+                  Design and execute cell-based screening campaigns and dose-
+                  and time-course studies across prostate, breast, leukemia, and
+                  immune-relevant models to profile panels of small-molecule
+                  inhibitors and degraders.
                 </li>
                 <li>
-                  Quantify viability, proliferation, cytotoxicity, and apoptosis using multi-parameter flow cytometry, live-cell imaging
-                  (e.g., Incucyte), and plate-based assays to support hit triage, lead ranking, and risk assessment.
+                  Quantify viability, proliferation, cytotoxicity, and apoptosis
+                  using multi-parameter flow cytometry, live-cell imaging (e.g.,
+                  Incucyte), and plate-based assays to support hit triage, lead
+                  ranking, and risk assessment.
                 </li>
                 <li>
-                  Fit EC<sub>50</sub>, IC<sub>50</sub>, and DC<sub>50</sub> curves and integrate basic exposure–response/PK/PD analysis
-                  to compare potency, selectivity, and liabilities, informing prioritization of preclinical candidates.
+                  Fit EC<sub>50</sub>, IC<sub>50</sub>, and DC<sub>50</sub>
+                  curves and integrate basic exposure–response/PK/PD analysis to
+                  compare potency, selectivity, and liabilities, informing
+                  prioritization of preclinical candidates.
                 </li>
               </ul>
             </div>
@@ -722,16 +826,21 @@
               <div class="card-title">Translational Oncology</div>
               <ul>
                 <li>
-                  Plan and interpret RNA-seq and quantitative proteomics to define treatment-induced pathway and gene-expression signatures
-                  in cancer and inflammatory models.
+                  Plan and interpret RNA-seq and quantitative proteomics to
+                  define treatment-induced pathway and gene-expression
+                  signatures in cancer and inflammatory models.
                 </li>
                 <li>
-                  Integrate <em>in vitro</em> pharmacology data with public tumor and survival datasets to generate target, indication, and biomarker
-                  hypotheses that support portfolio and indication strategy.
+                  Integrate <em>in vitro</em> pharmacology data with public
+                  tumor and survival datasets to generate target, indication,
+                  and biomarker hypotheses that support portfolio and indication
+                  strategy.
                 </li>
                 <li>
-                  Select disease-relevant <em>in vitro</em> models and pharmacodynamic readouts aligned with transcriptional CDK, NF-κB, and
-                  cytokine biology to connect mechanistic findings to preclinical design and life-cycle management questions.
+                  Select disease-relevant <em>in vitro</em> models and
+                  pharmacodynamic readouts aligned with transcriptional CDK,
+                  NF-κB, and cytokine biology to connect mechanistic findings to
+                  preclinical design and life-cycle management questions.
                 </li>
               </ul>
             </div>
@@ -748,20 +857,42 @@
         <div class="skills-grid">
           <!-- Gene Editing & Functional Genomics -->
           <div class="item">
-            <div class="skills-title">Gene Editing &amp; Functional Genomics</div>
+            <div class="skills-title">
+              Gene Editing &amp; Functional Genomics
+            </div>
             <ul class="skills-list">
-              <li>CRISPR KO/KI and screening workflows in human cancer cell models.</li>
-              <li>RNAi (shRNA/siRNA) and lentiviral transduction for target perturbation.</li>
+              <li>
+                CRISPR KO/KI and screening workflows in human cancer cell
+                models.
+              </li>
+              <li>
+                RNAi (shRNA/siRNA) and lentiviral transduction for target
+                perturbation.
+              </li>
             </ul>
           </div>
 
           <!-- Mammalian Cell Culture & Cell-Based Pharmacology -->
           <div class="item">
-            <div class="skills-title">Mammalian Cell Culture &amp; Cell-Based Pharmacology</div>
+            <div class="skills-title">
+              Mammalian Cell Culture &amp; Cell-Based Pharmacology
+            </div>
             <ul class="skills-list">
-              <li>Routine culture of human cancer and immune-relevant cell lines (e.g., LNCaP, 293T, THP-1) with seeding, passaging, and routine mycoplasma testing, including cryopreservation.</li>
-              <li>Cell viability, proliferation, cytotoxicity, cell-cycle, and apoptosis assays to characterize panels of inhibitors and degraders.</li>
-              <li>Multi-parameter flow cytometry and fluorescence-activated cell sorting (FACS); live-cell imaging (e.g., Incucyte) for kinetic readouts.</li>
+              <li>
+                Routine culture of human cancer and immune-relevant cell lines
+                (e.g., LNCaP, 293T, THP-1) with seeding, passaging, and routine
+                mycoplasma testing, including cryopreservation.
+              </li>
+              <li>
+                Cell viability, proliferation, cytotoxicity, cell-cycle, and
+                apoptosis assays to characterize panels of inhibitors and
+                degraders.
+              </li>
+              <li>
+                Multi-parameter flow cytometry and fluorescence-activated cell
+                sorting (FACS); live-cell imaging (e.g., Incucyte) for kinetic
+                readouts.
+              </li>
             </ul>
           </div>
 
@@ -771,7 +902,11 @@
             <ul class="skills-list">
               <li>Cloning, plasmid preparation, and DNA/RNA extraction.</li>
               <li>PCR, RT-PCR, and qRT-PCR assay development and optimization.</li>
-              <li>Hybridization Chain Reaction fluorescence <em>in situ</em> hybridization (HCR-FISH) and related nucleic-acid detection methods.</li>
+              <li>
+                Hybridization Chain Reaction fluorescence
+                <em>in situ</em> hybridization (HCR-FISH) and related
+                nucleic-acid detection methods.
+              </li>
             </ul>
           </div>
 
@@ -779,19 +914,40 @@
           <div class="item">
             <div class="skills-title">Protein &amp; Antibody-Based Assays</div>
             <ul class="skills-list">
-              <li>Protein gel electrophoresis, quantitative and phospho-specific immunoblotting for signaling and target-engagement analysis.</li>
-              <li>Immunoprecipitation / co-immunoprecipitation, ELISA, and cytokine profiling to connect pathway modulation to functional responses.</li>
-              <li>HPG protein synthesis assays, Coomassie and Ponceau S staining, and recombinant protein expression in HEK293.</li>
+              <li>
+                Protein gel electrophoresis, quantitative and phospho-specific
+                immunoblotting for signaling and target-engagement analysis.
+              </li>
+              <li>
+                Immunoprecipitation / co-immunoprecipitation, ELISA, and
+                cytokine profiling to connect pathway modulation to functional
+                responses.
+              </li>
+              <li>
+                HPG protein synthesis assays, Coomassie and Ponceau S staining,
+                and recombinant protein expression in HEK293.
+              </li>
             </ul>
           </div>
 
           <!-- Data Analysis, Biostatistics & Bioinformatics -->
           <div class="item">
-            <div class="skills-title">Data Analysis, Biostatistics &amp; Bioinformatics</div>
+            <div class="skills-title">
+              Data Analysis, Biostatistics &amp; Bioinformatics
+            </div>
             <ul class="skills-list">
-              <li>GraphPad Prism, FlowJo, Incucyte analysis software, Image Lab, confocal imaging tools, and LabArchives ELN.</li>
-              <li>R and Python on Unix/Linux systems for omics analysis, QC, statistics, and visualization.</li>
-              <li>LLM-assisted, tested analytics pipelines for normalization, QC, and automation to support reproducible decision-making.</li>
+              <li>
+                GraphPad Prism, FlowJo, Incucyte analysis software, Image Lab,
+                confocal imaging tools, and LabArchives ELN.
+              </li>
+              <li>
+                R and Python on Unix/Linux systems for omics analysis, QC,
+                statistics, and visualization.
+              </li>
+              <li>
+                LLM-assisted, tested analytics pipelines for normalization, QC,
+                and automation to support reproducible decision-making.
+              </li>
             </ul>
           </div>
 
@@ -799,9 +955,20 @@
           <div class="item">
             <div class="skills-title">Project, Models &amp; Compliance</div>
             <ul class="skills-list">
-              <li>Cross-functional project coordination and scientific communication with chemistry, bioinformatics, and clinical collaborators.</li>
-              <li>Experience with <em>in vivo</em> / <em>ex vivo</em> model systems including <em>Drosophila melanogaster</em> and <em>Mus musculus</em>-based workflows.</li>
-              <li>Familiarity with cGMP, ICH-GCP, and GLP expectations; emphasis on reproducible, well-documented experimental workflows.</li>
+              <li>
+                Cross-functional project coordination and scientific
+                communication with chemistry, bioinformatics, and clinical
+                collaborators.
+              </li>
+              <li>
+                Experience with <em>in vivo</em> / <em>ex vivo</em> model
+                systems including <em>Drosophila melanogaster</em> and
+                <em>Mus musculus</em>-based workflows.
+              </li>
+              <li>
+                Familiarity with cGMP, ICH-GCP, and GLP expectations; emphasis
+                on reproducible, well-documented experimental workflows.
+              </li>
             </ul>
           </div>
         </div>
@@ -822,11 +989,13 @@
                   src="01.png"
                   alt="Target validation"
                   class="gallery-img"
-                  style="object-position: 75% 30%;"
+                  style="object-position: 75% 30%"
                 />
               </div>
               <div class="gallery-caption">
-                <div class="gallery-caption-title">Target Validation · Proximity-Ligation Assay</div>
+                <div class="gallery-caption-title">
+                  Target Validation · Proximity-Ligation Assay
+                </div>
               </div>
             </div>
 
@@ -836,11 +1005,13 @@
                   src="08.png"
                   alt="Phenotypic response"
                   class="gallery-img"
-                  style="object-position: 50% 60%;"
+                  style="object-position: 50% 60%"
                 />
               </div>
               <div class="gallery-caption">
-                <div class="gallery-caption-title">Phenotypic Response · Immunoblotting</div>
+                <div class="gallery-caption-title">
+                  Phenotypic Response · Immunoblotting
+                </div>
               </div>
             </div>
 
@@ -850,11 +1021,13 @@
                   src="07.png"
                   alt="Omics Analyses"
                   class="gallery-img"
-                  style="object-position: 50% 30%;"
+                  style="object-position: 50% 30%"
                 />
               </div>
               <div class="gallery-caption">
-                <div class="gallery-caption-title">Omics Analyses · Volcano Plot of Quantitative Proteomics</div>
+                <div class="gallery-caption-title">
+                  Omics Analyses · Volcano Plot of Quantitative Proteomics
+                </div>
               </div>
             </div>
 
@@ -865,11 +1038,13 @@
                   src="17.png"
                   alt="Target validation"
                   class="gallery-img"
-                  style="object-position: 50% 30%;"
+                  style="object-position: 50% 30%"
                 />
               </div>
               <div class="gallery-caption">
-                <div class="gallery-caption-title">Target Validation · RT-qPCR</div>
+                <div class="gallery-caption-title">
+                  Target Validation · RT-qPCR
+                </div>
               </div>
             </div>
 
@@ -879,11 +1054,13 @@
                   src="02.png"
                   alt="Phenotypic response"
                   class="gallery-img"
-                  style="object-position: 50% 30%;"
+                  style="object-position: 50% 30%"
                 />
               </div>
               <div class="gallery-caption">
-                <div class="gallery-caption-title">Phenotypic Response · Cell Proliferation Assay</div>
+                <div class="gallery-caption-title">
+                  Phenotypic Response · Cell Proliferation Assay
+                </div>
               </div>
             </div>
 
@@ -893,11 +1070,13 @@
                   src="06.png"
                   alt="Omics Analyses"
                   class="gallery-img"
-                  style="object-position: 50% 30%;"
+                  style="object-position: 50% 30%"
                 />
               </div>
               <div class="gallery-caption">
-                <div class="gallery-caption-title">Omics Analyses · UMAP Analysis</div>
+                <div class="gallery-caption-title">
+                  Omics Analyses · UMAP Analysis
+                </div>
               </div>
             </div>
 
@@ -908,11 +1087,13 @@
                   src="18.png"
                   alt="Target validation"
                   class="gallery-img"
-                  style="object-position: 50% 30%;"
+                  style="object-position: 50% 30%"
                 />
               </div>
               <div class="gallery-caption">
-                <div class="gallery-caption-title">Target Validation · HPG Assay</div>
+                <div class="gallery-caption-title">
+                  Target Validation · HPG Assay
+                </div>
               </div>
             </div>
 
@@ -922,11 +1103,13 @@
                   src="16.png"
                   alt="Phenotypic response"
                   class="gallery-img"
-                  style="object-position: 50% 30%;"
+                  style="object-position: 50% 30%"
                 />
               </div>
               <div class="gallery-caption">
-                <div class="gallery-caption-title">Phenotypic Response · Cell Cycle Analysis</div>
+                <div class="gallery-caption-title">
+                  Phenotypic Response · Cell Cycle Analysis
+                </div>
               </div>
             </div>
 
@@ -936,11 +1119,13 @@
                   src="14.png"
                   alt="Omics Analyses"
                   class="gallery-img"
-                  style="object-position: 50% 30%;"
+                  style="object-position: 50% 30%"
                 />
               </div>
               <div class="gallery-caption">
-                <div class="gallery-caption-title">Omics Analyses · NCI-60 Analysis</div>
+                <div class="gallery-caption-title">
+                  Omics Analyses · NCI-60 Analysis
+                </div>
               </div>
             </div>
           </div>
@@ -956,31 +1141,44 @@
         <div class="section-body">
           <ul class="pub-list">
             <li>
-              <strong><u>Liu, T.-H.</u></strong>, Lyu, K., Zhao, J. C., Dang, X., Wang, X., &amp; Ji, J.-Y.
-              Development of potent and selective PROTAC degraders targeting transcriptional CDKs.
+              <strong><u>Liu, T.-H.</u></strong>, Lyu, K., Zhao, J. C., Dang, X.,
+              Wang, X., &amp; Ji, J.-Y. Development of potent and selective
+              PROTAC degraders targeting transcriptional CDKs.
               <em>(Manuscript in preparation).</em>
             </li>
             <li>
-              <strong><u>Liu, T.-H.</u></strong>, Li, X., Hsu, F. N., Sun, J., Niu, Y., Xing, Y., Liu, M., Liu, Y., Hemba-Waduge, R. U., Ni, J.-Q., &amp; Ji, J.-Y.
-              Asymmetric interdependency among the four subunits of the CDK8 module. <em>(Manuscript in preparation).</em>
+              <strong><u>Liu, T.-H.</u></strong>, Li, X., Hsu, F. N., Sun, J.,
+              Niu, Y., Xing, Y., Liu, M., Liu, Y., Hemba-Waduge, R. U., Ni,
+              J.-Q., &amp; Ji, J.-Y. Asymmetric interdependency among the four
+              subunits of the CDK8 module.
+              <em>(Manuscript in preparation).</em>
             </li>
             <li>
-              Li, X., Liu, M., Xing, Y., Niu, Y., <strong><u>Liu, T.-H.</u></strong>, Sun, J. L., Liu, Y., Hemba-Waduge, R. U., &amp; Ji, J.-Y.
-              Distinct effects of CDK8 module subunits on cellular growth and proliferation in <em>Drosophila</em>. <em>Development</em>, 2024.
+              Li, X., Liu, M., Xing, Y., Niu, Y.,
+              <strong><u>Liu, T.-H.</u></strong>, Sun, J. L., Liu, Y.,
+              Hemba-Waduge, R. U., &amp; Ji, J.-Y. Distinct effects of CDK8
+              module subunits on cellular growth and proliferation in
+              <em>Drosophila</em>. <em>Development</em>, 2024.
             </li>
             <li>
-              Liu, M., Hemba-Waduge, R. U., Li, X., Huang, X., <strong><u>Liu, T.-H.</u></strong>, Han, X., Wang, Y., &amp; Ji, J.-Y.
-              Wnt/Wingless signaling promotes lipid mobilization through transcriptional repression. <em>PNAS</em>, 2024.
+              Liu, M., Hemba-Waduge, R. U., Li, X., Huang, X.,
+              <strong><u>Liu, T.-H.</u></strong>, Han, X., Wang, Y., &amp; Ji,
+              J.-Y. Wnt/Wingless signaling promotes lipid mobilization through
+              transcriptional repression. <em>PNAS</em>, 2024.
             </li>
             <li>
-              Li, X., Zhang, M., Liu, M., <strong><u>Liu, T.-H.</u></strong>, Hemba-Waduge, R. U., &amp; Ji, J.-Y.
-              Cdk8 attenuates lipogenesis by inhibiting SREBP-dependent transcription in <em>Drosophila</em>.
+              Li, X., Zhang, M., Liu, M.,
+              <strong><u>Liu, T.-H.</u></strong>, Hemba-Waduge, R. U., &amp; Ji,
+              J.-Y. Cdk8 attenuates lipogenesis by inhibiting SREBP-dependent
+              transcription in <em>Drosophila</em>.
               <em>Disease Models &amp; Mechanisms</em>, 2022.
             </li>
             <li>
-              <strong>Provisional patent (in preparation):</strong>
-              Selective PROTAC degraders targeting transcriptional CDKs and their use in cancer therapy.
-              <strong><u>Liu, T.-H.</u></strong>, Lyu, K., Wang, X., Ji, J.-Y., et al.
+              <strong>Provisional patent (in preparation):</strong> Selective
+              PROTAC degraders targeting transcriptional CDKs and their use in
+              cancer therapy.
+              <strong><u>Liu, T.-H.</u></strong>, Lyu, K., Wang, X., Ji, J.-Y.,
+              et al.
             </li>
           </ul>
         </div>
