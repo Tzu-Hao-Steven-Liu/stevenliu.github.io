@@ -166,7 +166,6 @@
       overflow: hidden;
     }
 
-    /* 整個 hero 內容：左邊所有文字 + 照片 / 右邊 availability 泡泡 */
     .hero-top-row {
       display: flex;
       justify-content: space-between;
@@ -205,15 +204,6 @@
         #166534 100%
       );
       box-shadow: 0 0 12px rgba(74, 222, 128, 0.8);
-    }
-
-    .hero-availability {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      align-items: flex-end;
-      margin: 0;
     }
 
     .availability-pill {
@@ -321,8 +311,9 @@
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
       margin-top: 14px;
+      align-items: center;
     }
 
     .btn-ghost {
@@ -555,9 +546,6 @@
         align-items: flex-start;
         gap: 10px;
       }
-      .hero-availability {
-        align-items: flex-start;
-      }
       .availability-pill {
         text-align: left;
       }
@@ -609,7 +597,6 @@
       <section class="hero" id="top">
         <div class="hero-card">
           <div class="hero-top-row">
-            <!-- 左邊整欄：pill + 照片 + 文字 + skills + contact + 按鈕 -->
             <div class="hero-left-col">
               <div class="hero-pill">
                 <span class="hero-pill-dot"></span>
@@ -675,14 +662,10 @@
                   rel="noreferrer"
                   >Download portfolio PDF</a
                 >
+                <div class="availability-pill">Available · Jan. 5th 2026</div>
+                <div class="availability-pill">Location: USA</div>
+                <div class="availability-pill">Open to relocation</div>
               </div>
-            </div>
-
-            <!-- 右邊欄：三個 availability 泡泡 -->
-            <div class="hero-availability">
-              <div class="availability-pill">Available · Jan. 5th 2026</div>
-              <div class="availability-pill">Location: USA</div>
-              <div class="availability-pill">Open to relocation</div>
             </div>
           </div>
         </div>
@@ -1180,7 +1163,7 @@
               <strong>Provisional patent (in preparation):</strong> Selective
               PROTAC degraders targeting transcriptional CDKs and their use in
               cancer therapy.
-              <strong><u>Liu, T.-H.</u></strong>, Lyu, K., Wang, X., Ji, J.-Y.,
+              <strong><u>Liu, T.-H.</u></strong>, Lyu, K, Wang, X., Ji, J.-Y.,
               et al.
             </li>
           </ul>
